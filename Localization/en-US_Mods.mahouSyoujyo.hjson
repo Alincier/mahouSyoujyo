@@ -1,0 +1,470 @@
+Commons: {
+	DespairDeath: "{0} has died in despair..."
+	LeftGemDeath: "{0} has become an empty shell..."
+}
+
+Items: {
+	ColorFive: {
+		DisplayName: Color Five
+		Tooltip:
+			'''
+			Magic gun which stays over your head，shoots bullets in five colors:
+			[c/FF44AA:Pink]: another bullet;
+			[c/000033:Black]:slow down and increase damage by time, then suddenly accelerates;
+			[c/FFFF00:Yellow]: pierce through anything quickly;
+			[c/00DDDD:Blue]: healing;
+			[c/AA0000:Red]: double damage.
+			[c/ABCDEF:Changing Color]：Apply all effect.
+			left press to increase shoot speed——
+			And play songs according to where the mouse position on:
+			Top left near player:Connect;Top right near player:And I'm home;
+			Bottom left near player:Mataashita(See you tomorrow);Bottom right near player:Magia;
+			Far form player(30 grids away):Decretum.
+			right click to shoot scattered bullets——
+			And be a drummer.
+			"Team of five colors？Band of five colors!"
+			'''
+		MagicGirlTips: Only magic girls can unleash its full power
+	}
+
+	Firstbow: {
+		DisplayName: Origin of Relief
+		Tooltip:
+			'''
+			The bow used by someone, which is made by an extended branch and decorated with flowers at both ends.
+			Shoot pink arrows with half of all mana. The more mana, the higher damage.A short rest is necessary after each shoot.
+			If there is immense amount of  mana, it can even change the "rule". 
+			"It's said that it can be used for wide-area magic with a right click..Emm... I mean,it should, right?".
+			'''
+		MagicGirlTips: Only magic girls can unleash its full power
+	}
+
+	TooltipsToy: {
+		DisplayName: Toy of Tips
+		Tooltip:
+			'''
+			  Nice to meet you.
+			  Why do you keep silence?
+			  WHAT THE HELL IS THAT?
+			'''
+		AboutQB: QBs should be used for cooking.Except little QB.
+	}
+
+	soulGem: {
+		DisplayName: Soul Gem
+		Tooltip:
+			'''
+			The soul gem of magic girl, can be bought from little QB.
+			left click to become a magic girl.[c/AA0000:Notice]: It is irreversible, unless...
+			The soul gem will gradually accumulate pollution. 
+			You [c/AA0000: must] use the Grief Seed or its pieces for purification regularly, otherwise...
+			Magic girls [c/AA0000:must] carry it at all times.If not, SOMETHING BAD MAY HAPPEN...
+			(Well, if you do lose your gem... make a new one and use it. )
+			More BOSSes you defeat, stronger power you get(Only for magic girl), and more quickly pollution accumulates...
+			'''
+		No_owner: It has no owner.
+		Has_owner: "Owner: "
+		Charge: It can be purified with pieces of grief bought from NPC little QB.
+		Rescission: get rescission at little QB.
+		Pollution: present pollution degree:{0}%, time of completely polluted:{1} minutes
+		PowerTips: Number of BOSSes defeated:{0}/17. Strenth that Magic Girls get from it:
+		No_Power: No strenth, defeat BOSSes to accumulate power
+		Regen: Increase {0} life regen
+		hasPower: Have a magic girl contract
+	}
+
+	GriefSeed: {
+		DisplayName: Grief Seed
+		Tooltip:
+			'''
+			Relics of witch, can be used to purify soul gems.
+			Only magical girls can use it.
+			It can reduce the pollution degree of soul gems to 0.
+			'''
+	}
+
+	Critter_QBItem: {
+		DisplayName: QB
+		Tooltip:
+			'''
+			OK, you find it.So,you can bake it with lava,and get something tasty (probabily).
+			Or, you can cook it with furnace.
+			And of course, you can let it out and kill it,maybe it has some pieces of grief?
+			Oh my god, you gonna make a QB statue in graveyard? Well, good luck, QB!
+			'''
+	}
+
+	PieceofGrief: {
+		DisplayName: Piece of Grief
+		Tooltip:
+			'''
+			A piece of Grief, can be used to purify soul gems,though doesn't wolk effectively.
+			Only magical girls can use it.Four of this make a Grief Seed.
+			It can reduce the pollution of ten minutes.
+			'''
+	}
+
+	NoteTips: {
+		DisplayName: Notes and Tips
+		Tooltip:
+			'''
+			You can buy a Soul Gem and sign a contract to become a magical girl!
+			Sell magic girl weapons in hardmode.
+			Only when you signed a contract can you unleash the full power of magic girl weapons.
+			Now, the Soul Gem has a long polluting time at the beginning.
+			Defeating BOSSes will strengthen the Soul Gem and gain a large stat bonus, but it will also increase pollution speed.
+			The soul gem needs to be purified periodically with Pieces of Grief or Grief Seeds.
+			In normal times, all enemies and wild QBs will drop pieces of grief, which are useful for purifying gems.
+			During the Blood Moon, the Enemy monsters will occasionally drop the grief seeds.
+			In addition, each BOSS will drop a grief seed.
+			Of course, you can choose to buy from little Chubby - although it is a little expensive.
+			Finding little Chubby to break the magic girl contract costs 13 grief seeds.
+			'''
+	}
+
+	BlueSword: {
+		DisplayName: Tears
+		Tooltip:
+			'''
+			The girl's anger has no where to vent, and she turns to the enemies to vent her anger... 
+			The more enemies it hits, the higher damage it makes.
+			Right-click attack is a slash with 4 seconds cooldown.If it hits enemies,you will sprint,get temporary damage immunity and half of the cooldown reduce,as well as add Frostbite debuff to the target.
+			left click to use four combos:the third combo will make enemies rise and the fourth combo is the right-click slash.
+			And each of combos can be followed by a right click slash in short time regardless of the cooldown.
+			Successfully hit enemys with slash for six times to enter "Rage of Mermaid" state for 8 seconds.
+			In this state, left-click attacks will automatically append slashs, and each hit heals yourself.
+			Be a storm to destroy enemies!
+			"Damn it.I don't want to play Gunbreaker anymore."
+			'''
+		MagicGirlTips: Only magic girls can unleash its full power
+	}
+
+	QB_StatueItem: {
+		DisplayName: QB Statue
+		Tooltip:
+			'''
+			Statue of QB, can be used for spawning normal QB.
+			"Put it anywhere as you like, over a lava pool,or somewhere else.Yes, anywhere you like."
+			'''
+	}
+
+	QB_BannerItem: {
+		DisplayName: QB Banner
+		Tooltip: '''"It feels good"'''
+	}
+
+	DespairSoul: {
+		DisplayName: Despair Soul
+		Tooltip:
+			'''
+			A soul in despair, appears in shimmer
+			Summon Majo of unconsciousness
+			"STRONGER YOU ARE, STRONGER I AM"
+			'''
+	}
+
+	Majo_ConsciousnessRelic: {
+		DisplayName: Relic of Unconscious Majo
+		Tooltip: ""
+	}
+
+	Majo_ConsciousnessTrophy: {
+		DisplayName: Trophy of Unconscious Majo
+		Tooltip: ""
+	}
+
+	TimePlate: {
+		DisplayName: Circle Timer
+		Tooltip:
+			'''
+			Has amazing effect of stopping time. Bind a key in the control for quick use.
+			Using it will stop time for 3 seconds.However, your soul gem will be polluted slightly for each use.
+			Can be equipped in hardmode-it will constantly trigger the time stopping effect, but quickly contaminate the gem...
+			Notice: Player will not be affected by the time stopping effect only if the weapon is in the inventary or equipment slots.
+			So, If you don't have another Circle Timer, don't use it with your mouse-or you'll be stopped and lose three seconds.
+			Time Stopping effect also works on teammates who do not have this item.
+			[c/AA0000:Remember to prepare lots of grief seed, friends!]
+			'''
+		MagicGirlTips:
+			'''
+			Only MAGIC GIRL who is NOT IN DESPAIR can make it work.
+			You can use it any time,no matter whether you are a magic girl or not.
+			For magic girls,each using will cause pollution, even she's in despair.
+			'''
+		usetip: "{0} has stopped time!"
+		nomagiatip: "{0} is not a magic girl"
+		despairtip: "{0} is in despair..."
+		equiptip: "{0} has equipped stop-time item!"
+	}
+
+	BlessOfCircles: {
+		DisplayName: Bless Of Circles
+		Tooltip:
+			'''
+			Stop nature pollution increase, and Halve the pollution caused by stopping time
+			"There's no despair anymore"
+			Can be used only if Majo of Conciousness has been defeated at least once
+			'''
+	}
+
+	ConsciousnessBossBag: {
+		DisplayName: Treasure Bag (Majo of Consciousness)
+		Tooltip: Right click to open
+		info:
+			'''
+			Lower chance to get [i:{0}] in pre-hard mode
+			No chance to get [i:{1}] if MoonLord is not defeated
+			No chance to get [i:{2}] if plantera or any mech boss is not defeated
+			'''
+	}
+
+	RPGweapon: {
+		DisplayName: Fire Decisive
+		Tooltip:
+			'''
+			Left click to launch a missile.The missile changes stages according to existing time(This change will also take effect in time stopping state):
+			First stage: straight forward, and  blast after hitting.
+			Second stage: flameout and extense the tail.It will be affected by gravity in this stage.
+			Three stages: ignite to accelerate, get penetration of tiles and a small range of tracking effect,as well as explosion range and damage increased.
+			Four stages: become a super wide-area tracking missile, with a increasing chance by time of deflagrating after hitting.
+			Right click to immediately launch three super wide-area tracking missiles that are bound to deflagrate.
+			In time stopping state, colddowns of all attacks is reduced by half, but the mana cost is doubled.
+			"For my only friend"
+			'''
+		MagicGirlTips: Only magic girls can unleash its full power
+	}
+
+	YellowGun: {
+		DisplayName: Finale
+		Tooltip:
+			'''
+			Attack with gorgeous guns that are made of mana. There are two different shooting modes, which can be switched by right-clicking.
+			...
+			Mode 1: Summon flintlock guns to shoot. Keep shooting will increase the shooting frequency.
+			[c/FFF61B:Each hit will charge the weapon for "Finale" shooting.]
+			Mode 1 doesn't cost mana.
+			...
+			Mode 2: Shoot a wide range of area with energy attack. Normal attack has lower frequency and damage, and its damage decays with distance;
+			[c/FFF61B:If the weapon is fully charged,the weapon enters "Finale" state.In this state,attack becomes "Finale Shoot",tilting the energy constantly to deal high-frequency damage until the energy is all exhausted.]
+			In  "Finale" state, shooting will cost mana constantly.
+			Tips: Weapon steering becomes difficult when "Finale" shooting. Switching attack modes and weapons does not exit the "Finale" state.
+			[c/FFF61B:Any killings of enimies will charge your weapon,no matter what attack mode you are in.]
+			"Tiro Finale!"
+			'''
+		MagicGirlTips: Only magic girls can unleash its full power
+	}
+}
+
+Projectiles: {
+	HeartArrow.DisplayName: Heart Arrow
+	MagicCircle.DisplayName: Magic Circle
+	RegularArrow.DisplayName: Regular Arrow
+	ColorFive_Gun.DisplayName: Color Five_ Gun
+	ColorFiveBullet.DisplayName: Color Five Bullet
+	combo2.DisplayName: combo2
+	combo0.DisplayName: combo0
+	combo1.DisplayName: combo1
+	combo3.DisplayName: combo3
+	comboPurry.DisplayName: combo Purry
+	ComboCounter.DisplayName: Combo Counter
+	explosion1.DisplayName: Fire Decisive
+	explosion2.DisplayName: Fire Decisive
+	TimeMissile.DisplayName: Fire Decisive
+	YellowGunBullet.DisplayName: Yellow Gun Bullet
+	YellowGunLight.DisplayName: Yellow Gun Light
+}
+
+NPCs: {
+	QB: {
+		DisplayName: Little Chubby
+
+		TownNPCMood: {
+			Content:
+				'''
+				Chu, MuMu? Chu? 
+				(Em, want to become a magic girl? Think twice? ) 
+
+				'''
+			NoHome:
+				'''
+				Chu? Chu WuWu~
+				(Em? No home for me~) 
+
+				'''
+			FarFromHome:
+				'''
+				Chu? MeoMeo WuWu? 
+				(Em? Why I am far away from my home? ) 
+
+				'''
+			LoveSpace:
+				'''
+				Wu~ Meo ChuMeo HooHoo! ! 
+				(Um~The feeling of being alone is good!!) 
+
+				'''
+			DislikeCrowded:
+				'''
+				Meo? Chu ChuMeo ChuHooHoo~
+				(So many people? I don't like the feeling of being crowded~) 
+
+				'''
+			HateCrowded:
+				'''
+				MeoMeo! ChuChu ChuMeo, Poi……
+				(Too many people!I hate it, OOPS, someone stepped on my tail……) 
+
+				'''
+			LoveBiome:
+				'''
+				WuMu, MeoMeo ChuMeo MuMu! ! 
+				({BiomeName}, I do like here for its magical style!!) 
+
+				'''
+			LikeBiome:
+				'''
+				WuMu, Meo ChuMeo Mu! 
+				({BiomeName}, I like this harmonious feeling!) 
+
+				'''
+			DislikeBiome:
+				'''
+				WuMu, Chu ChuMeo ChuMu~
+				({BiomeName}, I don't like such bad feeling~) 
+
+				'''
+			HateBiome:
+				'''
+				WuMu, Goroo, ChuChu ChuMeo ChuMuMu…… 
+				({BiomeName}, remaining me bad memories, I really  hates such horrible place……) 
+
+				'''
+			LikeNPC:
+				'''
+				Meo ChuMeo WuMu! 
+				(I like {NPCName}! ) 
+
+				'''
+			DislikeNPC:
+				'''
+				Chu ChuMeo WuMu~
+				(I don't like {NPCName}~) 
+
+				'''
+			LikeNPC_Princess:
+				'''
+				Meo ChuMeo WuMu, WuMu MuMu! 
+				(I like {NPCName}, because {NPCName} use magic!) 
+
+				'''
+			Princess_LovesNPC:
+				'''
+				I like {NPCName},it's really cute. 
+
+				'''
+		}
+
+		description: Loner in Chubbys. Looks relatively young, with rich expressions.it cannot speak, and it's a mystery where it comes from.
+		rescission: Rescission
+		get_rescission: Meo!(The right choice! )
+		get_rescission_fail: Chu?Meo Meo!(Rescission of magic girl contract? I can help you if you have 13 grief seeds!)
+		NotMagicGirl: ChuChu!(You are not a magic girl now!)
+		Census.SpawnCondition: One of players has base mana more than 100.
+	}
+
+	Critter_QB: {
+		DisplayName: QB
+		description:
+			'''
+			An eerie creature with the appearance of a feline-like body. 
+			Bizarre tentacle-like forked structures, with floating golden rings, grows from sides of an organ suspected of a head.
+			Individuals generally lack emotion and may have a sense of cluster consciousness.
+			Humans who meet the creature for the first time generally rate it as "cute", 
+			and it is unclear whether it has cognitive interference abilities.
+			It is skilled in speech, and always tells the truth- with a lot of hidden information. 
+			Its purpose is to induce human beings to sign a contract to become magic girls,
+			and its objects are mostly human females in the growth stage.
+			bake it with lava may get something tasty(not always)?Of course, you can do it with furnace.(XD)
+			'''
+		Chat0: Sign a contract with me and become a magical girl!
+		Chat1: Human emotion is, in our view, a mental illness.
+		Chat2: Why be angry? Humans are so weird.
+		Chat3: I'm only responsible for collecting energy, as for what will happen to this planet, it is a issue of you humans.
+		Chat4: A betrayal? It is not I who betray you, but your own wishes. Oh~ Don't hold onto hope,it's a lot easier.
+		Chat5: Girls' sacrifices have been transformed into such a huge contribution to the universe,you human should be proud.
+		Signed: You are already a magic girl now.
+		Sign: OK, carry your soul gem and fight.Don't be slained soon, that's too wasteful.
+
+		TownNPCMood: {
+			Content: Would you like to sign a contract with me and become a magical girl?
+			FarFromHome: I have no emotion.
+			LoveSpace: By the way, would you like to sign a contract with me and become a magical girl?
+		}
+
+		Button1: Chat
+		Button2: SigntheContract
+	}
+
+	Majo_Consciousness: {
+		DisplayName: Majo of Consciousness
+		defeatedName: Majo of Unconscious
+		Description:
+			'''
+			The embodiment of the desperate condensation of the magic girls from Terra, whose nature is "to see". 
+			it will grow with the increase of knowledge, and eventually have the ability to destroy the world.
+			To defeat it, either challenge it when it is still immature, or be fully prepared to face your fears.
+			"STRONGER YOU ARE, STRONGER I AM"
+			'''
+		spawnInfo:
+			'''
+			Spwan when a magic girl dies in despair.
+			Change a soul gem into item "Despair Soul" with Shimmer, and use the item for BOSS spwaning.
+			'''
+	}
+}
+
+Buffs: {
+	MagicGirlPover: {
+		DisplayName: Prove of magic girl
+		Description:
+			'''
+			Magic Girl of Hope
+			Get comprehensive ability enhancement——
+			'''
+		notrelief: And what , girls , must we give in return?
+		relief: You have been relieved by Law of Circles!
+	}
+}
+
+DropConditions.downedMoonLord: player should have downed MoonLord
+
+Biomes: {
+	ConsciousnessSky: {
+		DisplayName: Consciousness Sky
+		TownNPCDialogueName: the Consciousness Sky
+	}
+
+	ConsciousSky: {
+		DisplayName: Conscious Sky
+		TownNPCDialogueName: the Conscious Sky
+	}
+}
+
+Keybinds: {
+	StopTimeUse: {
+		DisplayName: Time Stop
+		ToolTip: Need time stop item in the inventory
+	}
+}
+
+InfoDisplays: {
+	PollutionInfoDisplay: {
+		DisplayName: Pollution Info Display
+		ToolTip:
+			'''
+			Pollution Degree:{0}%
+			Time Left:{1} minutes
+			'''
+		Notmagia: Not a magic girl
+	}
+}

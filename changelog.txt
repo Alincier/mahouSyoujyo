@@ -1,0 +1,33 @@
+2025.1.13
+微调了渲染细节
+现在，在装备时停道具的时候，能正确使用快捷键了
+
+8.8
+哨兵本体将不受时停影响（但是射出的子弹会）
+修复了时停状态下终曲射击的动画效果
+
+8.7
+白名单追加
+
+8.6(重要更新)
+1.修复了一个严重问题，曾导致时停状态下的敌人在受到一次伤害后会进入无法被击中的无敌帧状态。现在你可以自由的在时停状态下对敌人造成伤害了。
+2.将原版的相当数量手持弹幕加入了时停的白名单中。这意味着时停状态下原版的鞭子、连枷、魔杖、矛、钻头等理应可以正常使用。
+如果你觉得任何武器弹幕应当在时停状态下生效，或者没能按预期生效，欢迎在评论中告知，作者会在评估后在后续更新中加入白名单中。
+
+额外小更新：手枪五色追加一首歌曲，且可以手动控制播放哪一首歌了。
+
+Important Update:
+1. Fixed a serious problem that caused enemies in time-stopping to enter an immune state that could not be hit after taking one damage.  You are now free to deal damage to enemies while it's still in time stopping.
+2. Add a significant number of the vanilla handheld projectile to the time-stopping whitelist. It means that the vanilla whips, flails, wands, spears, drills, etc. should be able to operate correctly when in time stopping.
+If you feel that any weapon projectiles should not be stopped, or doesn't work as expected, just let author know in the comments, and author may whitelist it in a subsequent update after evaluation.
+
+Extra small update:Add a new song to ColorFive,and now you can control which song to play manually.
+
+
+8.5
+1.给终曲加上了魔力消耗：现在使用能量攻击需要消耗魔力了。
+2.现在，魔法少女不会被魔力病影响，而是将其转化为污染值。每5秒的魔力病转化为1分钟的污染。
+
+1.weapon "Finale" will cost mana when using energy attack.
+2.now magic girl players won't be effected by mana sickness,but change it into pollution of soul gems.5 seconds of mana sickness for 1 minutes of pollution.
+

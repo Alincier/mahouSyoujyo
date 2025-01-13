@@ -1,0 +1,459 @@
+Commons: {
+	DespairDeath: "{0}在绝望中死去……"
+	LeftGemDeath: "{0}变成了一具空壳……"
+}
+
+Items: {
+	ColorFive: {
+		DisplayName: 五色
+		Tooltip:
+			'''
+			悬在头顶的魔法枪支，射出五色子弹：
+			[c/FF44AA:粉]：额外产生一颗子弹；
+			[c/000033:黑]：减速并随时间增加伤害，然后猛然加速；
+			[c/FFFF00:黄]：飞速穿透一切；
+			[c/00DDDD:蓝]：回复生命；
+			[c/AA0000:红]：双倍伤害。
+			[c/ABCDEF:变色]：应用全部效果。
+			左键长按提升射速——
+			并且根据开始时鼠标的位置，播放不同的歌曲:
+			人物近处左上：Connect;人物近处右上：And I'm home;
+			人物近处左下：mataashita(明天见);人物近处右下：Magia;
+			人物远处（距离30格外）：Decretum.
+			右键散射五色弹——
+			并且敲锣打鼓。
+			“五色战队？五色乐队！”
+			'''
+		MagicGirlTips: 只有魔法少女能发挥出全部力量
+	}
+
+	Firstbow: {
+		DisplayName: 原初之救济
+		Tooltip:
+			'''
+			某人使用的弓，弓身是伸展开的枝条，两端装点着花朵。
+			能以半数魔力射出粉色的箭矢，消耗魔力越多，伤害越高；射击后需要短暂的歇息。
+			有庞大魔力的话，甚至能改变“规则”。
+			“听说单击右键就能用它来释放广域魔法。嗯……我是说，它应当能，对吧？”
+			'''
+		MagicGirlTips: 只有魔法少女能发挥出全部力量
+	}
+
+	TooltipsToy: {
+		DisplayName: 提示用玩具
+		Tooltip:
+			'''
+			“很高兴认识你。”
+			“怎么不说话了？”
+			“什么玩意儿！”
+			'''
+		AboutQB: 丘比还是拿来烧烤好了。小丘比除外。
+	}
+
+	soulGem: {
+		DisplayName: 灵魂宝石
+		Tooltip:
+			'''
+			魔法少女的灵魂宝石，可以在小丘比处购买。
+			左键使用成为魔法少女。[c/AA0000:注意]：这是不可逆的，除非……
+			灵魂宝石会逐渐积累污染，[c/AA0000:必须]定期使用悲叹之种或者它的碎片净化，否则……
+			魔法少女[c/AA0000:必须]随身携带宝石。不携带的话，可能会有恐怖的事情发生……
+			（如果真的搞丢了，可以做一个新的并绑定）
+			击败的BOSS越多，获得的增幅越强（只对魔法少女生效）,污染得也越快。。。
+			'''
+		No_owner: 目前尚无归属者
+		Has_owner: 归属者：
+		Charge: 目前可以在NPC小丘比处购买悲叹碎片净化。
+		Rescission: 目前可以在小丘比处解约。
+		Pollution: 目前的污染程度为：{0}%，完全污染所需时间：{1}分钟
+		PowerTips: 击败BOSS数：{0}/17，装备后魔法少女可获得的加成：
+		No_Power: 暂无加成，击败BOSS积累力量
+		Regen: 提升生命回复{0}点
+		hasPower: 拥有魔法少女的契约
+	}
+
+	GriefSeed: {
+		DisplayName: 悲叹之种
+		Tooltip:
+			'''
+			魔女的遗物，可以用来净化灵魂宝石。
+			只有魔法少女才可以使用。
+			可以将灵魂宝石的污染度降低至0。
+			'''
+	}
+
+	Critter_QBItem: {
+		DisplayName: 野生丘比
+		Tooltip:
+			'''
+			恭喜你发现了它!用熔岩烤一下有概率会变成好吃的（？）或者你也可以用熔炉自己来合成~
+			当然，现在你也可以把它放出来，然后砍死。或许它身上带了一些悲叹碎片？
+			又或者，可以用它来合成雕像，做一些喜闻乐见的事……
+			'''
+	}
+
+	PieceofGrief: {
+		DisplayName: 悲叹碎片
+		Tooltip:
+			'''
+			悲叹之种的碎片，可以用来净化灵魂宝石，但效果不佳。
+			只有魔法少女才可以使用。四个碎片可以合成一个悲叹之种。
+			可以净化十分钟的污染。
+			'''
+	}
+
+	NoteTips: {
+		DisplayName: 提示纸条
+		Tooltip:
+			'''
+			可以购买灵魂宝石签订契约成为魔法少女啦！
+			困难模式下可购买魔法少女武器；在拥有契约的情况下，才能发挥魔法少女武器的全部力量。
+			现在，灵魂宝石初始拥有很长的污染时间。
+			击败BOSS后会强化灵魂宝石，获得大量属性加成，但也会加快污染速度。
+			灵魂宝石需要定期使用悲叹碎片或者悲叹之种净化。
+			平时，所有敌怪和野生丘比都有可以掉落悲叹碎片，用于净化宝石；
+			在血月期间，敌怪则会小概率掉落悲叹之种。
+			另外，BOSS必定掉落一个悲叹之种。
+			当然，你也可以选择找小丘比购买——虽然有点小贵。
+			找小丘比解除魔法少女的契约，则需要消耗13个悲叹之种。
+			'''
+	}
+
+	BlueSword: {
+		DisplayName: 泪滴
+		Tooltip:
+			'''
+			少女的愤恨无处倾泻，转而向敌人发泄怒火……击中敌人越多，伤害越高
+			右键进行一次有4秒冷却的挥砍，击中敌人后会冲刺并获得短暂伤害免疫，造成霜冻并且返还一半冷却时间
+			左键发动四段连击，第三段连击会挑飞敌人，第四段连击为与右键相同的挥砍
+			每段连击之后短时间内可以追加右键挥砍，无视右键冷却
+			成功用六次挥砍击中敌人，会进入人鱼狂怒状态8秒
+			该状态下，左键攻击将自动追加挥砍，且击中敌人后回复自身
+			化作一阵狂风摧毁敌人吧！
+			“该死，我不想再玩绝枪战士了。”
+			'''
+		MagicGirlTips: 只有魔法少女能发挥出全部力量
+	}
+
+	QB_StatueItem: {
+		DisplayName: 丘比雕像
+		Tooltip:
+			'''
+			丘比的雕像，可以生成普通的丘比。
+			“放哪都行，比如熔岩池上方，或者别的什么地方。嗯，哪儿都行。”
+			'''
+	}
+
+	QB_BannerItem: {
+		DisplayName: 丘比旗
+		Tooltip: “心情舒畅”
+	}
+
+	DespairSoul: {
+		DisplayName: 绝望的灵魂
+		Tooltip:
+			'''
+			一个绝望的灵魂，在微光中浮现
+			召唤意识之魔女
+			“吾乃汝力量之半身”
+			'''
+	}
+
+	Majo_ConsciousnessRelic: {
+		DisplayName: 无意识魔女圣物
+		Tooltip: ""
+	}
+
+	Majo_ConsciousnessTrophy: {
+		DisplayName: 无意识魔女纪念章
+		Tooltip: ""
+	}
+
+	TimePlate: {
+		DisplayName: 最终午时
+		Tooltip:
+			'''
+			拥有停止时间的梦幻能力，建议在控件中设置键位快捷使用
+			使用后可时停3秒，但是每次使用都会稍微污染灵魂宝石
+			困难模式可装备，装备后持续触发时停效果，但是会使宝石迅速污染……
+			注意：只有该武器在背包内或者装备栏内，玩家才不会被时停影响。
+			所以，如果你没有第二件最终午时，并用鼠标选中来使用，你就会被停住，然后浪费宝贵的三秒钟（XD)
+			时停对没有该道具的队友也生效
+			[c/AA0000:准备大量的悲叹之种吧！]
+			“十五宗罪”
+			'''
+		MagicGirlTips:
+			'''
+			只有【尚未绝望】的【魔法少女】能发挥作用
+			但你随时可以使用它，无论你是不是魔法少女
+			魔法少女每次使用都会累积污染，即使你已经绝望
+			'''
+		usetip: "{0}停止了时间！"
+		nomagiatip: "{0}并非魔法少女"
+		despairtip: "{0}已经绝望……"
+		equiptip: "{0}装备了时停道具！"
+	}
+
+	BlessOfCircles: {
+		DisplayName: 圆环的祝福
+		Tooltip:
+			'''
+			停止污染的自然增长，并使得时停的污染增长减半
+			“再也没有必要感到绝望了”
+			只有至少击败过意识魔女一次才能使用
+			'''
+	}
+
+	ConsciousnessBossBag: {
+		DisplayName: 宝藏袋（意识之魔女）
+		Tooltip: 右键点击可打开
+		info:
+			'''
+			在困难模式前获得[i:{0}]的概率较低
+			在击败月亮领主前不会获得[i:{1}]
+			在击败全部机械BOSS和世界之花前不会掉落[i:{2}]
+			'''
+	}
+
+	RPGweapon: {
+		DisplayName: 决绝之焰
+		Tooltip:
+			'''
+			左键发射一枚导弹，该导弹随存在时间发生阶段性变化，该效果在时停状态也会累积：
+			一阶段：直线前进，命中后炸裂；
+			二阶段：熄火并伸出尾翼，此时会受重力影响；
+			三阶段：点火加速，无限穿透物块并附带小范围追踪效果，炸裂范围和伤害增加；
+			四阶段：变成超广域追踪导弹，击中后有概率爆燃，概率随时间增加。
+			右键立即发射三枚必定爆燃的超广域追踪导弹。
+			在时停状态下，该武器所有攻击方式的攻击间隔会缩短一半，但消耗翻倍。
+			“为了我唯一的朋友”
+			'''
+		MagicGirlTips: 只有魔法少女能发挥出全部力量
+	}
+
+	YellowGun: {
+		DisplayName: 终曲
+		Tooltip:
+			'''
+			使用魔力凝聚的华丽枪支进行攻击。有两种不同的射击模式，通过右键切换。
+			...
+			模式一：召唤燧发枪持续射击，持续射击会提升频率；
+			[c/FFF61B:每次击中目标会为“终曲”射击充能。]
+			该模式不消耗魔力。
+			...
+			模式二：使用能量弹进行大范围攻击。普通状态下，会使用频率和伤害都较低的炮击，且伤害随距离衰减；
+			[c/FFF61B:满充能时进入“终曲”状态，该状态下攻击变为“终曲”射击，可以持续倾泻能量造成高频伤害，直到能量耗尽。]
+			“终曲”状态下射击需要持续消耗魔力。
+			说明：“终曲”状态射击时武器转向会变得困难；切换攻击模式和切换武器不会退出“终曲”状态。
+			[c/FFF61B:在任意攻击模式下击杀敌人，都会获得额外的充能并恢复魔力。]
+			"Tiro Finale!"
+
+			'''
+		MagicGirlTips: 只有魔法少女能发挥出全部力量
+	}
+}
+
+Projectiles: {
+	HeartArrow.DisplayName: 心灵之箭
+	MagicCircle.DisplayName: 魔法圆环
+	RegularArrow.DisplayName: 律动之箭
+	ColorFive_Gun.DisplayName: 五色枪
+	ColorFiveBullet.DisplayName: 五色弹
+	combo2.DisplayName: 连段-上挑
+	combo0.DisplayName: 连段-下劈
+	combo1.DisplayName: 连段-回旋
+	combo3.DisplayName: 连段-神秘
+	comboPurry.DisplayName: 连段-反制
+	ComboCounter.DisplayName: 连段计数器
+	explosion1.DisplayName: 决绝之焰
+	explosion2.DisplayName: 决绝之焰
+	TimeMissile.DisplayName: 决绝之焰
+	// YellowGunBullet.DisplayName: Yellow Gun Bullet
+	// YellowGunLight.DisplayName: Yellow Gun Light
+}
+
+NPCs: {
+	QB: {
+		DisplayName: 小丘比
+
+		TownNPCMood: {
+			Content:
+				'''
+				啾，姆姆？啾？
+				（咦，想成为魔法少女？要想好哦？） 
+
+				'''
+			NoHome:
+				'''
+				啾？啾 唔唔~
+				（嗯？没地方住啦~） 
+
+				'''
+			FarFromHome:
+				'''
+				啾？萌萌 唔唔？
+				（咦？怎么我在在离家这么远的地方？） 
+
+				'''
+			LoveSpace:
+				'''
+				唔~萌 啾萌 呼呼！！
+				（唔~独处很不错呢！！） 
+
+				'''
+			DislikeCrowded:
+				'''
+				萌？啾 啾萌 啾呼呼~
+				（怎么这么多人？不太喜欢拥挤的感觉啦~） 
+
+				'''
+			HateCrowded:
+				'''
+				萌萌！啾啾 啾萌，Poi……
+				（太多人啦！讨厌，踩到尾巴啦……） 
+
+				'''
+			LoveBiome:
+				'''
+				唔姆，萌萌 啾萌 姆姆！！
+				（{BiomeName}，非常喜欢的魔法的风格！！） 
+
+				'''
+			LikeBiome:
+				'''
+				唔姆，萌 啾萌 姆！
+				（{BiomeName}，很喜欢这种和谐的感觉呢！）
+
+				'''
+			DislikeBiome:
+				'''
+				唔姆，啾 啾萌 啾姆~
+				（{BiomeName}，不太喜欢这种不妙的感觉~） 
+
+				'''
+			HateBiome:
+				'''
+				唔姆，咕噜，啾啾 啾萌 啾姆姆…… 
+				（{BiomeName}，想起不好的回忆，很不喜欢这种可怕的地方……） 
+
+				'''
+			LikeNPC:
+				'''
+				萌 啾萌 唔姆！
+				（我喜欢{NPCName}！）
+
+				'''
+			DislikeNPC:
+				'''
+				啾 啾萌 唔姆~
+				（我不喜欢{NPCName}~） 
+
+				'''
+			LikeNPC_Princess:
+				'''
+				萌 啾萌 唔姆，唔姆 姆姆！
+				（我喜欢{NPCName}，因为 {NPCName}会用魔法！） 
+
+				'''
+			Princess_LovesNPC:
+				'''
+				我很喜欢{NPCName}，它真的很可爱。 
+
+				'''
+		}
+
+		description: 丘比中的异类，看起来比较幼小，表情丰富，不会说话，来历不明。
+		rescission: 解约
+		get_rescission: 萌！（正确的选择！）
+		get_rescission_fail: 啾？萌！（想解除魔法少女的契约？如果你有13个悲叹之种的话，我可以帮你哦！）
+		NotMagicGirl: 啾啾！（你现在不是魔法少女哟！）
+		Census.SpawnCondition: 其中一位玩家的基础魔法值大于100点。
+	}
+
+	Critter_QB: {
+		DisplayName: 丘比
+		description:
+			'''
+			一种诡异的生物，外观上有疑似猫科动物的身体架构，疑似头部的器官两侧长出怪诞的类似触手的分叉结构，并套有浮空的金色圆环。
+			个体普遍缺乏情感，可能具有集群意识。
+			初次遇见的人类一般对该生物做出“可爱的”评价，其是否具有认知干涉能力尚不明确。
+			擅长使用话术，所言皆是真话，但存在大量隐瞒信息。其目的是诱使人类签订契约成为魔法少女，其对象大多为成长期的人类女性。
+			用熔岩烤一下有概率会变成好吃的（？）当然你也可以用熔炉自己来XD
+			'''
+		Chat0: 和我签订契约成为魔法少女吧！
+		Chat1: 人类的情感，在我们看来是一种精神疾病哦。
+		Chat2: 为什么要感到愤怒呢？人类还真是奇怪啊。
+		Chat3: 我只负责收集能量，至于这颗星球怎样就是你们人类自己的事了。
+		Chat4: 背叛吗？背叛你们的不是我，而是你们自己的愿望哦，只要不要抱有希望就好了。
+		Chat5: 少女的牺牲能转换成这么巨大的能量，为宇宙做出贡献，你们应该感到自豪啊。
+		Signed: 你现在已经是一个魔法少女了。
+		Sign: 好了，拿着灵魂宝石去战斗吧，收集能量就靠你了别一下就死了，那也太浪费了。
+
+		TownNPCMood: {
+			Content: 要不要和我签订契约成为魔法少女呢？
+			FarFromHome: 我没有情感可言。
+			LoveSpace: 顺带一提，要不要和我签订契约成为魔法少女呢？
+		}
+
+		Button1: 交谈
+		Button2: 签约
+	}
+
+	Majo_Consciousness: {
+		DisplayName: 意识之魔女
+		defeatedName: 无意识魔女
+		Description:
+			'''
+			来自泰拉的魔法少女的绝望凝结的化身，其性质为见闻。会随着见识的增加而逐步成长，最终成为足以灭世的魔女。
+			要击败它的话，要么趁其尚不成熟之时将其击败，要么做好完全的准备，直面内心的恐惧吧。
+			“吾即汝力量之半身”
+			'''
+		spawnInfo: 魔法少女因绝望而死时会生成；将灵魂宝石丢入微光中，会得到道具“绝望的灵魂”，使用绝望的灵魂召唤。
+	}
+}
+
+Buffs: {
+	MagicGirlPover: {
+		DisplayName: 魔法少女的证明
+		Description:
+			'''
+			希望的魔法少女
+			得到全方位的能力强化——
+			'''
+		notrelief: 但是，魔法少女呀，代价是什么呢？
+		relief: 你已被圆环之理救赎！
+	}
+}
+
+DropConditions.downedMoonLord: 玩家需要击败月亮领主
+
+Biomes: {
+	ConsciousnessSky: {
+		DisplayName: Consciousness Sky
+		TownNPCDialogueName: the Consciousness Sky
+	}
+
+	ConsciousSky: {
+		DisplayName: Conscious Sky
+		TownNPCDialogueName: the Conscious Sky
+	}
+}
+
+Keybinds: {
+	StopTimeUse: {
+		DisplayName: 时间停止
+		ToolTip: 需要背包中有时停武器才能使用
+	}
+}
+
+InfoDisplays: {
+	PollutionInfoDisplay: {
+		DisplayName: 污染信息显示
+		ToolTip:
+			'''
+			污染度：{0}%
+			剩余时间：{1}分钟
+			'''
+		Notmagia: 并非魔法少女
+	}
+}

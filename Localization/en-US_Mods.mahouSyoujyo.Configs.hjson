@@ -1,0 +1,80 @@
+Common: {
+}
+
+ClientConfigs: {
+	DisplayName: Client Configs
+
+	GrayScaleClosed_Consciousness: {
+		Label: Stop the Gray Scale Effect of Majo of Consciousness
+		Tooltip: Stop the gray scale effect of Majo of Consciousness in its first stage
+	}
+
+	FilterClosed_TimeStop: {
+		Label: Stop the Filter Effect when time stopping
+		Tooltip: Stop the screen filter effect when time stopping
+	}
+
+	NoSongs_ColorFive: {
+		Label: Ban Songs of Color Five from Playing
+		Tooltip: Songs are not allow to play when you are using Color Five
+	}
+
+	Headers: {
+		BOSS: BOSS
+		Item: Item
+	}
+
+	ConsciousBeauty: {
+		Label: Make Majo of Consciousness A Beauty
+		Tooltip: If you do hates blood or horror
+	}
+
+	CloseConsciousEnchantment: {
+		Label: Close the enchantment effect(background) of Majo of Consciousness
+		Tooltip: If you feel bad or dizzy
+	}
+
+	ShowTimeStopTips: {
+		Label: Show Tips when using Time Stop Items
+		Tooltip: Show tips above the player who uses time stop items
+	}
+}
+
+ServerConfigs: {
+	DisplayName: Server Configs
+
+	Headers: {
+		BOSS: BOSS
+		Item: Item
+	}
+
+	CustomedMajoConsciousness: {
+		Label: Customed Majo of Consciousness
+		Tooltip: The abilities of Majo of Consciousness are no longer based on bosses defeated, but what you set below
+	}
+
+	bosslist: {
+		Label: Abilities of Majo of Consciousness
+		Tooltip: Ability list of Majo of Consciousness,take effect only if Majo of Consciousness is customed
+	}
+
+	QBshop: {
+		Label: Little QB Sells Weapons
+		Tooltip: Little QB will sell magic girl weapons in hard mode
+	}
+
+	MajoSpawnInDespair: {
+		Label: Majo Spawn In Despair
+		Tooltip: Spawn majo when a magic girl player dies in despair
+	}
+
+	NoSeedDrop: {
+		Label: Normal Enemies Drops No Grief Seeds And Its Pieces
+		Tooltip: Normal enemies will not drop grief seeds its pieces,which makes it a challenge for magic girls.
+	}
+
+	CanStopTimeWhenItemUseOverZero: {
+		Label: Using Stop-Time Item With Keybind Has No Animation
+		Tooltip: Allow you to use stop-time item with keybinding when you are using other weapons or items.(Just like Rod of Discord.)If this set to "off", stop time keybind will not work when using other item.
+	}
+}

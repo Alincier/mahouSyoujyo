@@ -1,0 +1,80 @@
+Common: {
+}
+
+ClientConfigs: {
+	DisplayName: 客户端设置
+
+	GrayScaleClosed_Consciousness: {
+		Label: 停用意识之魔女的灰度效果
+		Tooltip: 停用意识之魔女一阶段的灰度效果
+	}
+
+	FilterClosed_TimeStop: {
+		Label: 停用时停时的滤镜效果
+		Tooltip: 停用时停时的屏幕滤镜效果
+	}
+
+	NoSongs_ColorFive: {
+		Label: 禁止五色的曲目播放
+		Tooltip: 当你使用五色时不播放歌曲
+	}
+
+	Headers: {
+		BOSS: BOSS
+		Item: 物品
+	}
+
+	ConsciousBeauty: {
+		Label: 把意识之魔女变成美少女
+		Tooltip: 如果你真的很讨厌血腥和恐怖的话
+	}
+
+	CloseConsciousEnchantment: {
+		Label: 关闭意识之魔女的结界效果（背景）
+		Tooltip: 如果你感到不适和眩晕的话
+	}
+
+	ShowTimeStopTips: {
+		Label: 使用时停道具时出现提示
+		Tooltip: 玩家使用时停道具时头上会出现提示
+	}
+}
+
+ServerConfigs: {
+	DisplayName: 服务器设置
+
+	Headers: {
+		BOSS: BOSS
+		Item: 物品
+	}
+
+	CustomedMajoConsciousness: {
+		Label: 意识之魔女能力自定义
+		Tooltip: 意识之魔女的能力不再根据已击败BOSS提升，而是拥有下方设置的能力
+	}
+
+	bosslist: {
+		Label: 意识之魔女能力
+		Tooltip: 意识之魔女拥有的BOSS能力列表，需要开启能力自定义才会生效
+	}
+
+	QBshop: {
+		Label: 小丘比售卖武器
+		Tooltip: 开启后小丘比会在困难模式售卖魔法少女武器（默认开启）
+	}
+
+	MajoSpawnInDespair: {
+		Label: 绝望而死生成魔女
+		Tooltip: 开启后，若魔法少女玩家死于绝望中，会生成魔女（默认开启）
+	}
+
+	NoSeedDrop: {
+		Label: 普通敌人不掉落悲叹之种及其碎片
+		Tooltip: 普通敌人将不会掉落悲叹之种及其碎片；这会给魔法少女带来挑战。
+	}
+
+	CanStopTimeWhenItemUseOverZero: {
+		Label: 依靠快捷键使用时停道具时没有动画
+		Tooltip: 允许你依靠快捷键使用时停道具，即使你正在使用其他武器或物品（就像混沌传送杖那样）。如果你关闭该设置，则在使用其他道具时，快捷键使用时停将不生效。
+	}
+}
