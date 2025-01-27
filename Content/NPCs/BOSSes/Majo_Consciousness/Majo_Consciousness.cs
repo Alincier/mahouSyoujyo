@@ -422,7 +422,7 @@ namespace mahouSyoujyo.Content.NPCs.BOSSes.Majo_Consciousness
         public override bool PreDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
             if (Main.netMode == NetmodeID.Server) return false;
-            if (!ModContent.GetInstance<ClientConfigs>().GrayScaleClosed_Consciousness && NPC.life>stagepoint) 
+            if (!ModContent.GetInstance<ClientConfigs>().GrayScaleClosed_Consciousness && NPC.life>stagepoint)
                 mahouSyoujyo.SceneShader("GrayScaleMajoConciousness", 0.7f*(float)Math.Max(0, NPC.life-stagepoint) / (float)(NPC.lifeMax-stagepoint));
             else mahouSyoujyo.DelSceneShader("GrayScaleMajoConciousness");
             float transparnt = (float)(255-NPC.alpha) / 255f;

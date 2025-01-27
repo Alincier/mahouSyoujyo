@@ -224,7 +224,7 @@ namespace mahouSyoujyo.Content.Projectiles
                 Dust.NewDustDirect(Projectile.Center + (root+2*Projectile.velocity)*scale,
                 32*scale, 32*scale, 206, newColor: Color.DarkBlue);
             }*/
-                mahouSyoujyo.draw_Center(
+            mahouSyoujyo.draw_Center(
                 tex: tex,
                 frame_num: 1, frame: 0,
                 pos: Projectile.Center + (root+Projectile.velocity)*scale /*+ new Vector2(0 , 16f*scale)*/, 

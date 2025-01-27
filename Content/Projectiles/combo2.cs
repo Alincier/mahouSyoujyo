@@ -212,7 +212,7 @@ namespace mahouSyoujyo.Content.Projectiles
                 32*scale, 32*scale, 206, newColor: Color.SkyBlue);
             }*/
 
-                mahouSyoujyo.draw_Center(
+            mahouSyoujyo.draw_Center(
                 tex: tex,
                 frame_num: 1, frame: 0,
                 pos: Projectile.Center + (root+Projectile.velocity)*scale /*+ new Vector2(0 , 16f*scale)*/, 

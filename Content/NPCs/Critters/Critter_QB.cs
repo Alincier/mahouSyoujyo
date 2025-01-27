@@ -1,4 +1,5 @@
-﻿using mahouSyoujyo.Content.Buffs;
+﻿using mahouSyoujyo.Common.Systems;
+using mahouSyoujyo.Content.Buffs;
 using mahouSyoujyo.Content.Items;
 using mahouSyoujyo.Content.NPCs.Critters;
 using mahouSyoujyo.Content.Tiles.Banners;
@@ -104,8 +105,8 @@ namespace mahouSyoujyo.Content.NPCs.Critters
             NPC.height = 32;
             NPC.aiStyle =7;
             NPC.damage = 0;
-            NPC.defense = 0;
-            NPC.lifeMax = 200000;
+            NPC.defense = 99999;
+            NPC.lifeMax = 5;
             NPC.knockBackResist =0.2f;
             NPC.HitSound = SoundID.NPCHit46;
             NPC.DeathSound = SoundID.NPCDeath1;
@@ -123,7 +124,10 @@ namespace mahouSyoujyo.Content.NPCs.Critters
             bestiaryEntry.AddTags(BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
                 new FlavorTextBestiaryInfoElement(this.GetLocalizedValue("description")));
         }
-
+        public override void UpdateLifeRegen(ref int damage)
+        {
+            NPC.lifeRegen += 600;
+        }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
             return SpawnCondition.TownGeneralCritter.Chance * 0.05f;
@@ -145,16 +149,26 @@ namespace mahouSyoujyo.Content.NPCs.Critters
         }
         public override void ModifyHitByItem(Player player, Item item, ref NPC.HitModifiers modifiers)
         {
-            modifiers.SetCrit();
             modifiers.SourceDamage*=0;
-            modifiers.FinalDamage.Flat=7775;
+            if (TimeStopSystem.TimeStopping)
+            {
+                modifiers.SetCrit();
+                modifiers.FinalDamage.Flat=9999997;
+                return;
+            }
+            modifiers.DisableCrit();
             base.ModifyHitByItem(player, item, ref modifiers);
         }
         public override void ModifyHitByProjectile(Projectile projectile, ref NPC.HitModifiers modifiers)
         {
-            modifiers.SetCrit();
             modifiers.SourceDamage*=0;
-            modifiers.FinalDamage.Flat=7775;
+            if (TimeStopSystem.TimeStopping)
+            {
+                modifiers.SetCrit();
+                modifiers.FinalDamage.Flat=9999997;
+                return;
+            }
+            modifiers.DisableCrit();
             base.ModifyHitByProjectile(projectile, ref modifiers);
         }
         public override void HitEffect(NPC.HitInfo hit)
@@ -199,7 +213,7 @@ namespace mahouSyoujyo.Content.NPCs.Critters
             if (Collision.LavaCollision(NPC.position, NPC.width, NPC.height))
             { // NPC.lavawet not 100% accurate for the frog
                 NPC.life = 0;
-                if (Main.rand.NextBool(4*((NPC.SpawnedFromStatue)?10:1)))
+                if (Main.rand.NextBool((NPC.SpawnedFromStatue)?10:1))
                     Item.NewItem(NPC.GetSource_Loot(), NPC.Hitbox, ItemID.BBQRibs);
                 NPC.HitEffect(instantKill:true);
                 SoundEngine.PlaySound(SoundID.ResearchComplete with { Volume=0.5f}, NPC.position); // plays a fizzle sound
@@ -237,7 +251,7 @@ namespace mahouSyoujyo.Content.NPCs.Critters
     {
         public override void SetStaticDefaults()
         {
-            ItemID.Sets.IsLavaBait[Type] = true; // While this item is not bait, this will require a lava bug net to catch.
+            ItemID.Sets.IsLavaBait[Type] = false; // While this item is not bait, this will require a lava bug net to catch.
         }
 
         public override void SetDefaults()
@@ -267,8 +281,8 @@ namespace mahouSyoujyo.Content.NPCs.Critters
             //生成个数
             //CreateRecipe(1);
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(this, 4);
-            //recipe.AddTile(TileID.WorkBenches);
+            recipe.AddIngredient(this, 1);
+            recipe.AddTile(TileID.CookingPots);
             recipe.ReplaceResult(ItemID.BBQRibs, 1);
             recipe.DisableDecraft();
             recipe.Register();

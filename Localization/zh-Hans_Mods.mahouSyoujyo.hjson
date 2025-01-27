@@ -18,7 +18,7 @@ Items: {
 			左键长按提升射速——
 			并且根据开始时鼠标的位置，播放不同的歌曲:
 			人物近处左上：Connect;人物近处右上：And I'm home;
-			人物近处左下：mataashita(明天见);人物近处右下：Magia;
+			人物近处左下：Mataashita(明天见);人物近处右下：Magia;
 			人物远处（距离30格外）：Decretum.
 			右键散射五色弹——
 			并且敲锣打鼓。
@@ -41,12 +41,7 @@ Items: {
 
 	TooltipsToy: {
 		DisplayName: 提示用玩具
-		Tooltip:
-			'''
-			“很高兴认识你。”
-			“怎么不说话了？”
-			“什么玩意儿！”
-			'''
+		Tooltip: “什么玩意儿！”你是怎么找到我的？
 		AboutQB: 丘比还是拿来烧烤好了。小丘比除外。
 	}
 
@@ -86,9 +81,9 @@ Items: {
 		DisplayName: 野生丘比
 		Tooltip:
 			'''
-			恭喜你发现了它!用熔岩烤一下有概率会变成好吃的（？）或者你也可以用熔炉自己来合成~
+			恭喜你捉住了它!用熔岩烤一下会变成好吃的。或者你也可以自己用锅来烹饪~
 			当然，现在你也可以把它放出来，然后砍死。或许它身上带了一些悲叹碎片？
-			又或者，可以用它来合成雕像，做一些喜闻乐见的事……
+			又或者，可以用它来合成雕像，可再生地利用……
 			'''
 	}
 
@@ -251,6 +246,46 @@ Items: {
 			'''
 		MagicGirlTips: 只有魔法少女能发挥出全部力量
 	}
+
+	MusicBox_Magia: {
+		DisplayName: 八音盒(Magia)
+		Tooltip: ""
+	}
+
+	MusicBox_AndImHome: {
+		DisplayName: 八音盒(And I'm Home)
+		Tooltip: ""
+	}
+
+	MusicBox_Connect: {
+		DisplayName: 八音盒(Connect)
+		Tooltip: ""
+	}
+
+	MusicBox_Decretum: {
+		DisplayName: 八音盒(Decretum)
+		Tooltip: ""
+	}
+
+	MusicBox_Mataashita: {
+		DisplayName: 八音盒(Mataashita)
+		Tooltip: ""
+	}
+
+	MusicBox_CredensJustitiam: {
+		DisplayName: 八音盒(Credens justitiam)
+		Tooltip: ""
+	}
+
+	MusicBox_Naturally: {
+		DisplayName: 八音盒(Naturally)
+		Tooltip: ""
+	}
+
+	MusicBox_SisPuellaMagica: {
+		DisplayName: 八音盒(Sis puella magica!)
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -378,7 +413,7 @@ NPCs: {
 			个体普遍缺乏情感，可能具有集群意识。
 			初次遇见的人类一般对该生物做出“可爱的”评价，其是否具有认知干涉能力尚不明确。
 			擅长使用话术，所言皆是真话，但存在大量隐瞒信息。其目的是诱使人类签订契约成为魔法少女，其对象大多为成长期的人类女性。
-			用熔岩烤一下有概率会变成好吃的（？）当然你也可以用熔炉自己来XD
+			用熔岩烤一下会变成好吃的。当然你也可以用锅自己来烹饪XD
 			'''
 		Chat0: 和我签订契约成为魔法少女吧！
 		Chat1: 人类的情感，在我们看来是一种精神疾病哦。
@@ -387,7 +422,7 @@ NPCs: {
 		Chat4: 背叛吗？背叛你们的不是我，而是你们自己的愿望哦，只要不要抱有希望就好了。
 		Chat5: 少女的牺牲能转换成这么巨大的能量，为宇宙做出贡献，你们应该感到自豪啊。
 		Signed: 你现在已经是一个魔法少女了。
-		Sign: 好了，拿着灵魂宝石去战斗吧，收集能量就靠你了别一下就死了，那也太浪费了。
+		Sign: 好了，拿着灵魂宝石去战斗吧，收集能量就靠你了，别一下就死了，那也太浪费了。
 
 		TownNPCMood: {
 			Content: 要不要和我签订契约成为魔法少女呢？
