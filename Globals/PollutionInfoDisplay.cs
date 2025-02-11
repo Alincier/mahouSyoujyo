@@ -1,6 +1,4 @@
 ﻿using Humanizer;
-using mahouSyoujyo.Content;
-using mahouSyoujyo.Globals;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
@@ -26,7 +24,7 @@ namespace mahouSyoujyo.Globals
         // Here we can change the value that will be displayed in the game
         public override string DisplayValue(ref Color displayColor, ref Color displayShadowColor)
         {
-            MGPlayer mgplayer = Main.LocalPlayer.GetModPlayer<MGPlayer>();
+            MGPlayer mgplayer = Main.LocalPlayer.magic();
             bool magia = mgplayer.magia;
             double time = mgplayer.polluted_time;
             double deadline = mgplayer.deadline;

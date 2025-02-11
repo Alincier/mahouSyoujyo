@@ -18,6 +18,7 @@ using Terraria.Utilities;
 using mahouSyoujyo.Content.Items.SpecialWeapon;
 using mahouSyoujyo.Common.Configs;
 using System.Runtime.Intrinsics.Arm;
+using mahouSyoujyo.Content.Items.Placeable;
 
 namespace mahouSyoujyo.Content.NPCs.Towns
 { 
@@ -143,7 +144,7 @@ namespace mahouSyoujyo.Content.NPCs.Towns
         {
             //所有可能出现的名字
             return new List<string>() {
-        "Ta**** U*",
+        "Tamaki Ui",
             };
         }
         //决定NPC会被哪座雕像传送
@@ -261,12 +262,21 @@ namespace mahouSyoujyo.Content.NPCs.Towns
             .Add<Items.soulGem>()
             .Add<PieceofGrief>()
             .Add<GriefSeed>(Condition.BloodMoon)
+            .Add<MusicBox_Connect>()
+            .Add<MusicBox_Mataashita>()
+            .Add<MusicBox_AndImHome>()
+            .Add<MusicBox_Magia>()
+            .Add<MusicBox_Decretum>()
+            .Add<MusicBox_SisPuellaMagica>()
+            .Add<MusicBox_Naturally>()
+            .Add<MusicBox_CredensJustitiam>()
             .Add<Firstbow>(Condition.Hardmode, enableshop)
             .Add<TimePlate>(Condition.Hardmode, enableshop)
             .Add<ColorFive>(Condition.Hardmode, enableshop)
             .Add<BlueSword>(Condition.Hardmode, enableshop)
             .Add<RPGweapon>(Condition.Hardmode, enableshop)
             .Add<YellowGun>(Condition.Hardmode, enableshop)
+            .Add<RedSpear>(Condition.Hardmode, enableshop)
             .AllowFillingLastSlot()
             .Register();
             //在物品的SetDefault里面用Item.shopCustomPrice =Item.buyPrice(20, 0, 0, 0);设置价格

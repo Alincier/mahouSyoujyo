@@ -107,7 +107,7 @@ namespace mahouSyoujyo.Content.Projectiles.Weapon
                 }
             }
             if (Main.myPlayer != Projectile.owner) return;
-            //记录旧数据，有变化则同步（放弃了音效，只保留外观）
+            //记录旧数据，有变化则同步（只保留外观）
             oldtimeleft = Projectile.timeLeft;
             oldrotation = Projectile.rotation;
             oldframe = Projectile.frame;
@@ -159,7 +159,6 @@ namespace mahouSyoujyo.Content.Projectiles.Weapon
                 return;
             }
             Projectile.ai[2]--;
-            //Main.NewText(player.altFunctionUse);
             if ( Projectile.ai[2]<=0)
             {
                 Projectile.ai[2]= 60 ;

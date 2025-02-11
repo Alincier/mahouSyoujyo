@@ -62,11 +62,6 @@ namespace mahouSyoujyo.Content.Projectiles
                 Projectile.DamageType = DamageClassLoader.GetDamageClass((int)Projectile.ai[1]);
             }
             Projectile.ai[0]++;
-            //if (Projectile.ai[0]==10)
-            //{
-            //    Main.NewText(Projectile.DamageType);
-            //    Main.NewText(Projectile.damage);
-            //}
             //图像顺时针旋转角度
             float directed = MathHelper.ToRadians(0f);
             Projectile.rotation = directed + Projectile.velocity.ToRotation();

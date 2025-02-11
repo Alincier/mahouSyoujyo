@@ -17,7 +17,7 @@ using Terraria.ModLoader;
 
 namespace mahouSyoujyo.Globals
 {
-    // Please read https://github.com/tModLoader/tModLoader/wiki/Basic-tModLoader-Modding-Guide#mod-skeleton-contents for more information about the various files in a mod.
+    
     public class TimeStop : ModPlayer
     {
         public int usetip = 0;
@@ -31,6 +31,9 @@ namespace mahouSyoujyo.Globals
             ModContent.ProjectileType<ComboCounter>(),
             ModContent.ProjectileType<MagicCircle>(),
             ModContent.ProjectileType<YellowGunLight>(),
+            ModContent.ProjectileType<RedSpearBend>(),
+            ModContent.ProjectileType<RedSpearBullet>(),
+            ModContent.ProjectileType<RedSpearChainProj>(),
             // ÷≥÷…À∫¶µØƒª
             //¡¥«Ú
             ProjectileID.BallOHurt,
@@ -122,7 +125,6 @@ namespace mahouSyoujyo.Globals
                 timeLast=TimeStopSystem.TimeLast;
                 timeLeft=TimeStopSystem.StopTimeLeft;
                 int radias = Math.Min(1200 * Math.Min(timeLast, timeLeft) / 30, 1200);
-                //Main.NewText(radias);
                 mahouSyoujyo.SceneShader(tech: "GrayScaleTimeStop", degree: 0.5f,factor:0, r0: 32 , r1: radias, r2: 48, targetX: Main.LocalPlayer.Center.X, targetY: Main.LocalPlayer.Center.Y);
                 mahouSyoujyo.SceneShader(tech: "ShockWaveTechnique", degree: radias / 400f, factor: 100-radias / 12f, r0: 5, r1: 5f, r2: 5, targetX: Main.LocalPlayer.Center.X, targetY: Main.LocalPlayer.Center.Y);
             }
@@ -176,7 +178,6 @@ namespace mahouSyoujyo.Globals
                 usetip--;
                 //Utils.DrawBorderStringFourWay(Main.spriteBatch, FontAssets.MouseText.Value, 
                 //    Player.name +" Drawed", Player.Center.X-Main.screenPosition.X, Player.Center.Y-Main.screenPosition.X, Color.LightBlue, Color.LightBlue, new Vector2(0, 0));
-                //Main.NewText("Drawed");
             //}
             base.DrawEffects(drawInfo, ref r, ref g, ref b, ref a, ref fullBright);
         }

@@ -32,21 +32,16 @@ Items: {
 		Tooltip:
 			'''
 			The bow used by someone, which is made by an extended branch and decorated with flowers at both ends.
-			Shoot pink arrows with half of all mana. The more mana, the higher damage.A short rest is necessary after each shoot.
+			Shoot pink arrows with half of all mana. The more mana, the higher damage.
 			If there is immense amount of  mana, it can even change the "rule". 
-			"It's said that it can be used for wide-area magic with a right click..Emm... I mean,it should, right?".
+			"Right click to use wide-area magic with at least 300 mana. By the way,a magic weapon never out of mana is fantastic, isn't it?".
 			'''
 		MagicGirlTips: Only magic girls can unleash its full power
 	}
 
 	TooltipsToy: {
 		DisplayName: Toy of Tips
-		Tooltip:
-			'''
-			  Nice to meet you.
-			  Why do you keep silence?
-			  WHAT THE HELL IS THAT?
-			'''
+		Tooltip: '''"WHAT THE HELL IS THIS?"How could you find me?'''
 		AboutQB: QBs should be used for cooking.Except little QB.
 	}
 
@@ -87,10 +82,10 @@ Items: {
 		DisplayName: QB
 		Tooltip:
 			'''
-			OK, you find it.So,you can bake it with lava,and get something tasty (probabily).
-			Or, you can cook it with furnace.
+			OK, you caught it.You can bake it with lava,and get something tasty.
+			Or, you can cook it with cooking pots.
 			And of course, you can let it out and kill it,maybe it has some pieces of grief?
-			Oh my god, you gonna make a QB statue in graveyard? Well, good luck, QB!
+			Oh, you gonna make a QB statue in graveyard? Well, good luck, QB!
 			'''
 	}
 
@@ -109,9 +104,9 @@ Items: {
 		Tooltip:
 			'''
 			You can buy a Soul Gem and sign a contract to become a magical girl!
-			Sell magic girl weapons in hardmode.
+			Little QB sells magic girl weapons in hardmode.
 			Only when you signed a contract can you unleash the full power of magic girl weapons.
-			Now, the Soul Gem has a long polluting time at the beginning.
+			The Soul Gem has a long polluting time at the beginning.
 			Defeating BOSSes will strengthen the Soul Gem and gain a large stat bonus, but it will also increase pollution speed.
 			The soul gem needs to be purified periodically with Pieces of Grief or Grief Seeds.
 			In normal times, all enemies and wild QBs will drop pieces of grief, which are useful for purifying gems.
@@ -253,6 +248,62 @@ Items: {
 			'''
 		MagicGirlTips: Only magic girls can unleash its full power
 	}
+
+	MusicBox_Magia: {
+		DisplayName: Music Box(Magia)
+		Tooltip: ""
+	}
+
+	MusicBox_AndImHome: {
+		DisplayName: Music Box(And I'm Home)
+		Tooltip: ""
+	}
+
+	MusicBox_Connect: {
+		DisplayName: Music Box(Connect)
+		Tooltip: ""
+	}
+
+	MusicBox_Decretum: {
+		DisplayName: Music Box(Decretum)
+		Tooltip: ""
+	}
+
+	MusicBox_Mataashita: {
+		DisplayName: Music Box(Mataashita)
+		Tooltip: ""
+	}
+
+	MusicBox_CredensJustitiam: {
+		DisplayName: Music Box(Credens justitiam)
+		Tooltip: ""
+	}
+
+	MusicBox_Naturally: {
+		DisplayName: Music Box(Naturally)
+		Tooltip: ""
+	}
+
+	MusicBox_SisPuellaMagica: {
+		DisplayName: Music Box(Sis puella magica!)
+		Tooltip: ""
+	}
+
+	RedSpear: {
+		DisplayName: Spear Leaver
+		Tooltip:
+			'''
+			Press [↓] to summon the spreading chains around. Each diffusion cost mana. Release the key to release the chains. The spear will be the center if it exists.
+			When the spear has not been thrown out:
+			* Long-press the left key to spin the spear. When it reaches full speed, the spear get charged. Releasing when charged throws the spear.
+			* Press [↑ + left key] to grip the spear for charging.  Releasing throws it, and the spear get full charged at maximum gripping time.
+			The spear will pierce enemies/tiles and stay on it.It stays for ten seconds on enemies and for infinite time on tiles.
+			Right-click retrieves the spear, dealing accumulated damage to impaled enemies.The spin instantly reach max speed when charged spears retrieved.
+			"You said you aren't used to fighting with burden - you're right."
+			'''
+		MagicGirlTips: Only magic girls can unleash its full power
+		ManaInfo: Each spread of chains cost {0} mana
+	}
 }
 
 Projectiles: {
@@ -272,6 +323,9 @@ Projectiles: {
 	TimeMissile.DisplayName: Fire Decisive
 	YellowGunBullet.DisplayName: Yellow Gun Bullet
 	YellowGunLight.DisplayName: Yellow Gun Light
+	RedSpearBullet.DisplayName: Red Spear Bullet
+	RedSpearBend.DisplayName: Red Spear Bend
+	RedSpearChainProj.DisplayName: Red Spear Chain Proj
 }
 
 NPCs: {
@@ -300,7 +354,7 @@ NPCs: {
 			LoveSpace:
 				'''
 				Wu~ Meo ChuMeo HooHoo! ! 
-				(Um~The feeling of being alone is good!!) 
+				(Um~The feeling of being oneself is good!!) 
 
 				'''
 			DislikeCrowded:
@@ -384,7 +438,7 @@ NPCs: {
 			It is skilled in speech, and always tells the truth- with a lot of hidden information. 
 			Its purpose is to induce human beings to sign a contract to become magic girls,
 			and its objects are mostly human females in the growth stage.
-			bake it with lava may get something tasty(not always)?Of course, you can do it with furnace.(XD)
+			bake it with lava may get something tasty.Of course, you can do it with cooking pots.(XD)
 			'''
 		Chat0: Sign a contract with me and become a magical girl!
 		Chat1: Human emotion is, in our view, a mental illness.

@@ -13,6 +13,7 @@ using System.Transactions;
 using Terraria.DataStructures;
 using Terraria.Audio;
 using mahouSyoujyo.Content.Items;
+using mahouSyoujyo.Globals;
 
 namespace mahouSyoujyo.Content.Buffs
 {
@@ -52,7 +53,6 @@ namespace mahouSyoujyo.Content.Buffs
                 d.velocity *= 0.3f;
             }
             player.lifeRegen += 5;//生命回复+5
-            //Main.NewText(player.moveSpeed.ToString()+"  "+player.maxRunSpeed.ToString());
             player.moveSpeed += 0.1f;//10%移速加成
             //player.accRunSpeed += 0.5f;//给予0.5加速度
             player.statLifeMax2 += player.statLifeMax / 10;//最大生命+10%，注意，是lifemax2，lifemax是存档生命上限（吃生命水晶的那种）
@@ -70,7 +70,7 @@ namespace mahouSyoujyo.Content.Buffs
             {
                 if (Main.LocalPlayer.active)
                 {
-                    if (Main.LocalPlayer.GetModPlayer<MGPlayer>().relief)
+                    if (Main.LocalPlayer.magic().relief)
                         tip+="\n"+Language.GetText("Mods.mahouSyoujyo.Buffs.MagicGirlPover.relief");
                     else tip+="\n"+Language.GetText("Mods.mahouSyoujyo.Buffs.MagicGirlPover.notrelief");
                 }

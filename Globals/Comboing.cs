@@ -60,7 +60,6 @@ namespace mahouSyoujyo.Globals
                 }
                     
             }
-            //Main.NewText(CD);
             if (purry_bonus>0) purry_bonus--;
             if (purryCD>0) purryCD--;
             if (CD>0) CD--;

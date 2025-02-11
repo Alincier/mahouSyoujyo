@@ -1,4 +1,5 @@
 ﻿using mahouSyoujyo.Content.Buffs;
+using mahouSyoujyo.Globals;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -43,7 +44,7 @@ namespace mahouSyoujyo.Content.Items
         {
             if (player.HasBuff<MagicGirlPover>()) 
             {
-                MGPlayer mgplayer = player.GetModPlayer<MGPlayer>();
+                MGPlayer mgplayer = player.magic();
                 mgplayer.polluted_time = 0;
                 return true; 
             }
@@ -74,7 +75,6 @@ namespace mahouSyoujyo.Content.Items
             // Here we give the item name a rainbow effect.
             foreach (TooltipLine line in tooltips)
             {
-                //Main.NewText(line.Name);
                 if (line.Mod == "Terraria" && line.Name == "ItemName")
                 {
                     line.OverrideColor = Main.DiscoColor;

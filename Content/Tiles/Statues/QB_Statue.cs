@@ -101,7 +101,6 @@ namespace mahouSyoujyo.Content.Tiles.Statues
             // Note that we use 0.5 for height 
             float spawnX = (x + TileWidth * 0.5f) * 16;
             float spawnY = (y + TileHeight * 0.5f) * 16;
-            //Main.NewText(Main.tile[i, j].TileFrameX);
             // This example shows both item spawning code and npc spawning code, you can use whichever code suits your mod
             // There is a 95% chance for item spawn and a 5% chance for npc spawn
             // If you want to make a item spawning statue, see below.

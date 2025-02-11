@@ -31,8 +31,7 @@ namespace mahouSyoujyo.Common.Systems
                 StopTimeLeft--;
                 TimeStopping = true;
             }
-           // Main.NewText(StopTimeLeft);
-           // Main.NewText(TimeStopping);
+
         }
         public override void SaveWorldData(TagCompound tag)
         {

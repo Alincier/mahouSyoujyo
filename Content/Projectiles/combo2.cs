@@ -126,8 +126,6 @@ namespace mahouSyoujyo.Content.Projectiles
             }
             Projectile.width = 160*scale; // The width of projectile hitbox
             Projectile.height = 80*scale; // The height of projectile hitbox
-            // Main.NewText(player.channel);
-            // Main.NewText(Projectile.ai[0]);
             if (Projectile.ai[0] == 0)
             {
                 if (player.direction>=0) { direction =0; }// Projectile.rotation = Projectile.velocity.ToRotation(); }
@@ -162,7 +160,6 @@ namespace mahouSyoujyo.Content.Projectiles
                 Projectile.damage = (int)(damage*3*damage_bonus);
             }
 
-            //Main.NewText(length);
             Projectile.ai[0]++;
             for (int i = frame_tail -1; i>0; i--)
             {
@@ -212,7 +209,7 @@ namespace mahouSyoujyo.Content.Projectiles
                 32*scale, 32*scale, 206, newColor: Color.SkyBlue);
             }*/
 
-                mahouSyoujyo.draw_Center(
+            mahouSyoujyo.draw_Center(
                 tex: tex,
                 frame_num: 1, frame: 0,
                 pos: Projectile.Center + (root+Projectile.velocity)*scale /*+ new Vector2(0 , 16f*scale)*/, 
@@ -243,8 +240,7 @@ namespace mahouSyoujyo.Content.Projectiles
         }
         public override void Kill(int timeLeft)
         {
-            //停止声音
-            //Main.NewText(damage_bonus);
+
 
         }
     }

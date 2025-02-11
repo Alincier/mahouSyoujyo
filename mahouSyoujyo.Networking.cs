@@ -1,5 +1,4 @@
 using mahouSyoujyo.Common.Systems;
-using mahouSyoujyo.Content;
 using mahouSyoujyo.Globals;
 using mahouSyoujyo.Globals.Players;
 using System.IO;
@@ -8,8 +7,8 @@ using Terraria.ID;
 
 namespace mahouSyoujyo
 {
-	// This is a partial class, meaning some of its parts were split into other files. See ExampleMod.*.cs for other portions.
-	partial class mahouSyoujyo
+    // This is a partial class, meaning some of its parts were split into other files. See ExampleMod.*.cs for other portions.
+    partial class mahouSyoujyo
     {
 		internal enum MessageType : byte
 		{
@@ -30,7 +29,7 @@ namespace mahouSyoujyo
 				// This message syncs ExampleStatIncreasePlayer.exampleLifeFruits and ExampleStatIncreasePlayer.exampleManaCrystals
 				case MessageType.MGPlayerSync:
 					byte playerNumber = reader.ReadByte();
-					MGPlayer mgPlayer = Main.player[playerNumber].GetModPlayer<MGPlayer>();
+					MGPlayer mgPlayer = Main.player[playerNumber].magic();
 					mgPlayer.ReceivePlayerSync(reader);
 
 					if (Main.netMode == NetmodeID.Server) {

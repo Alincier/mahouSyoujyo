@@ -1,5 +1,5 @@
 ﻿using mahouSyoujyo.Common.Systems;
-using mahouSyoujyo.Content;
+using mahouSyoujyo.Globals;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -56,11 +56,11 @@ namespace mahouSyoujyo.Content.Items.Consumables.StatIncreaseItem
         public override bool? UseItem(Player player)
         {
 
-            if (player.GetModPlayer<MGPlayer>().relief)
+            if (player.magic().relief)
             {
                 return null;
             }
-            player.GetModPlayer<MGPlayer>().relief = true;
+            player.magic().relief = true;
             return true;
         }
     }

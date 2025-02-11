@@ -90,7 +90,6 @@ public class ColorFive : ModItem
             float y = (Main.MouseWorld-player.Center).Y;
             Projectile gun = Projectile.NewProjectileDirect(source, gun_Position, Vector2.Zero, ModContent.ProjectileType<ColorFive_Gun>(), damage, knockback, player.whoAmI);
         }
-        //Main.NewText(Main.projectile[gun].ai[0]);
         //寻找可以复制的射弹
         //int proj_Type = type;
         //int proj_damage = damage;

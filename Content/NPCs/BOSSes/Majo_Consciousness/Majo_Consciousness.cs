@@ -169,7 +169,6 @@ namespace mahouSyoujyo.Content.NPCs.BOSSes.Majo_Consciousness
             {
                 count++;
             }
-            //Main.NewText(count);
             return count;
         }
         //修饰射弹、召唤的NPC的伤害和速度
@@ -422,7 +421,7 @@ namespace mahouSyoujyo.Content.NPCs.BOSSes.Majo_Consciousness
         public override bool PreDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
             if (Main.netMode == NetmodeID.Server) return false;
-            if (!ModContent.GetInstance<ClientConfigs>().GrayScaleClosed_Consciousness && NPC.life>stagepoint) 
+            if (!ModContent.GetInstance<ClientConfigs>().GrayScaleClosed_Consciousness && NPC.life>stagepoint)
                 mahouSyoujyo.SceneShader("GrayScaleMajoConciousness", 0.7f*(float)Math.Max(0, NPC.life-stagepoint) / (float)(NPC.lifeMax-stagepoint));
             else mahouSyoujyo.DelSceneShader("GrayScaleMajoConciousness");
             float transparnt = (float)(255-NPC.alpha) / 255f;
@@ -465,8 +464,6 @@ namespace mahouSyoujyo.Content.NPCs.BOSSes.Majo_Consciousness
                 , 0);
             if (((customed)? bosslist.Contains("EvilBoss") :NPC.downedBoss2) && NPC.life<stagepoint / 2 )
             {
-                // Main.NewText((stagepoint -NPC.life).ToString()+" "+stagepoint.ToString()+" "+((float)(stagepoint -NPC.life)/ (float)stagepoint)
-                //     *((float)(stagepoint -NPC.life)/ (float)stagepoint));
                 spriteBatch.Draw(
                     tex, NPC.Center+2*(Main.LocalPlayer.Center-NPC.Center)-Main.screenPosition,
                     rect, Main.DiscoColor*0.5f*shadowAlphaMultipy*transparnt, -NPC.rotation,
@@ -496,8 +493,6 @@ namespace mahouSyoujyo.Content.NPCs.BOSSes.Majo_Consciousness
                     , 0);
                 if (((customed) ? bosslist.Contains("EvilBoss") : NPC.downedBoss2) && NPC.life<stagepoint / 2 )
                 {
-                    // Main.NewText((stagepoint -NPC.life).ToString()+" "+stagepoint.ToString()+" "+((float)(stagepoint -NPC.life)/ (float)stagepoint)
-                    //     *((float)(stagepoint -NPC.life)/ (float)stagepoint));
 
                     spriteBatch.Draw(
                         tex, pos_old[i]+2*(Main.LocalPlayer.Center-pos_old[i])-Main.screenPosition,
@@ -568,7 +563,6 @@ namespace mahouSyoujyo.Content.NPCs.BOSSes.Majo_Consciousness
             }
             
 
-            // Main.NewText(direction);
             return false;
         }
         public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
@@ -584,7 +578,6 @@ namespace mahouSyoujyo.Content.NPCs.BOSSes.Majo_Consciousness
             
             Color color=(stage==1)?Color.White:Color.Gray;
             NPC.color = color*1f*((float)(255-NPC.alpha)/ 256f );
-            //Main.NewText(action);
             // This NPC animates with a simple "go from start frame to final frame, and loop back to start frame" rule
             // In this case: First stage: 0-1-2-0-1-2, Second stage: 3-4-5-3-4-5, 5 being "total frame count - 1"
             int startFrame = 0;
@@ -711,8 +704,6 @@ namespace mahouSyoujyo.Content.NPCs.BOSSes.Majo_Consciousness
             NPC.damage = 0;
             NPC.defense = NPC.defDefense;
             NPC.alpha = ((int)Main.time*8 % 512>255) ? 511-(int)Main.time*8 % 512 : (int)Main.time*8 % 512;
-            //Main.NewText(NPC.alpha);
-            //Main.NewText(Main.time);
             //NPC.damage=0;
             SpawnProj();
             if (Main.netMode == NetmodeID.MultiplayerClient) return;
@@ -739,7 +730,6 @@ namespace mahouSyoujyo.Content.NPCs.BOSSes.Majo_Consciousness
         {
             SpawnProj();
 
-            //Main.NewText(action);
             Player player = Main.player[NPC.target];
             int transtime = (Main.expertMode) ? 30 : 60;
             switch (action)
@@ -835,8 +825,6 @@ namespace mahouSyoujyo.Content.NPCs.BOSSes.Majo_Consciousness
                                     //伤害修正，传入的是伤害加成前的伤害（经典到大师是2/4/6倍加成
                     (int)(NPC.defDamage/6*Modify((int)modifyID.projectileDamage, projList[index])),
                     5f);//, owner:NPC.whoAmI会使射弹消失
-                //Main.NewText(NPC.defDamage);
-                //Main.NewText(NPC.damage);
                 if (Main.netMode == NetmodeID.Server)
                 {
                     NetMessage.SendData(MessageID.SyncProjectile, number: projectile.whoAmI);
@@ -867,8 +855,6 @@ namespace mahouSyoujyo.Content.NPCs.BOSSes.Majo_Consciousness
                                                  //伤害修正，传入的是伤害加成前的伤害（经典到大师是2/4/6倍加成
                     (int)(NPC.defDamage/6*Modify((int)modifyID.projectileDamage, ProjectileID.QueenBeeStinger)),
                     5f);//, owner:NPC.whoAmI会使射弹消失
-                        //Main.NewText(NPC.defDamage);
-                        //Main.NewText(NPC.damage);
             if (Main.netMode == NetmodeID.Server)
             {
                 NetMessage.SendData(MessageID.SyncProjectile, number: projectile.whoAmI);
@@ -894,8 +880,6 @@ namespace mahouSyoujyo.Content.NPCs.BOSSes.Majo_Consciousness
                                                  //伤害修正，传入的是伤害加成前的伤害（经典到大师是2/4/6倍加成
                     (int)(NPC.defDamage/6*Modify((int)modifyID.projectileDamage, ProjectileID.CultistBossLightningOrb)),
                     5f);//, owner:NPC.whoAmI会使射弹消失
-                        //Main.NewText(NPC.defDamage);
-                        //Main.NewText(NPC.damage);
             if (Main.netMode == NetmodeID.Server)
             {
                 NetMessage.SendData(MessageID.SyncProjectile, number: projectile.whoAmI);
@@ -1012,7 +996,6 @@ namespace mahouSyoujyo.Content.NPCs.BOSSes.Majo_Consciousness
                     NPC.velocity = Vector2.Zero;
                     transpos=player.Center+new Vector2(player.direction*offsetX, offsetY);
                     nomalized = (transpos-NPC.Center).SafeNormalize(Vector2.Zero);
-                    //Main.NewText(NPC.velocity);
                 }
                 if (counter <=stagetime / 2) NPC.velocity+=nomalized*maxspeed/(stagetime /2);
                 else NPC.velocity-=nomalized*maxspeed/(stagetime /2);
@@ -1020,7 +1003,6 @@ namespace mahouSyoujyo.Content.NPCs.BOSSes.Majo_Consciousness
             }
             
 
-            //Main.NewText(nomalized);
 
             if (counter>=stagetime)
             {
@@ -1056,7 +1038,6 @@ namespace mahouSyoujyo.Content.NPCs.BOSSes.Majo_Consciousness
             }
 
 
-            //Main.NewText(nomalized);
 
             if (counter>=time)
             {

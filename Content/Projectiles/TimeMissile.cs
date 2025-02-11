@@ -176,7 +176,7 @@ namespace mahouSyoujyo.Content.Projectiles
                 SpriteEffects.None, 0);
             return false;
         }
-        public override void Kill(int timeLeft)
+        public override void OnKill(int timeLeft)
         {
             var source = Projectile.GetSource_FromThis();
             if (stage <=3)

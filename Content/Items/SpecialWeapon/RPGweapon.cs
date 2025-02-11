@@ -59,7 +59,6 @@ namespace mahouSyoujyo.Content.Items.SpecialWeapon
         }
         public override void UpdateInventory(Player player)
         {
-           // Main.NewText();
             if (right_colddown>0) right_colddown--;
             base.UpdateInventory(player);
         }

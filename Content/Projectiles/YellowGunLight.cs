@@ -12,6 +12,7 @@ using mahouSyoujyo.Common.Configs;
 using mahouSyoujyo.Content.Items.MeleeWeapon;
 using mahouSyoujyo.Content.Items;
 using Terraria.GameContent.ItemDropRules;
+using mahouSyoujyo.Globals;
 
 namespace mahouSyoujyo.Content.Projectiles
 {
@@ -148,7 +149,7 @@ namespace mahouSyoujyo.Content.Projectiles
         }
         public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
-            bool magia = player.GetModPlayer<MGPlayer>().magia;
+            bool magia = player.magic().magia;
             float distance = Vector2.Distance(target.Center,Projectile.Center+Projectile.velocity.SafeNormalize(Vector2.Zero)*240f);
             float mul = Math.Clamp((laserspeed*15f-distance)/720f, 0f, 1f);
             if (!magia) mul = mul*mul;
@@ -162,9 +163,9 @@ namespace mahouSyoujyo.Content.Projectiles
             {
                 if (npc.realLife==who) count++;
             }
-            if (count>=16) modifiers.SourceDamage*=0.1f;
-            else if (count>=8) modifiers.SourceDamage*=0.2f;
-            else if (count>=4) modifiers.SourceDamage*=0.3f;
+            if (count>=16) modifiers.SourceDamage*=0.25f;
+            else if (count>=8) modifiers.SourceDamage*=0.3f;
+            else if (count>=4) modifiers.SourceDamage*=0.4f;
             else if (count>=2) modifiers.SourceDamage*=0.5f;
         }
         private float FrameCounter
@@ -247,9 +248,6 @@ namespace mahouSyoujyo.Content.Projectiles
             }
             Projectile.ai[0]++;
             
-            // Animation code could go here if the projectile was animated. 
-
-            // Plays a sound every 20 ticks. In aiStyle 20, soundDelay is set to 30 ticks.
 
             Vector2 playerCenter = player.RotatedRelativePoint(player.MountedCenter);
             if (Main.myPlayer == Projectile.owner)
@@ -334,7 +332,7 @@ namespace mahouSyoujyo.Content.Projectiles
                         dust.velocity =Projectile.velocity.SafeNormalize(Vector2.Zero).RotatedBy(MathHelper.ToRadians(Main.rand.NextFloat(-30f, 30f)))*laserspeed;
                     }
                 }
-                if (Main.myPlayer == Projectile.owner && !released) player.GetModPlayer<YellowGunCharge>().yellowguncharge=Math.Clamp( player.GetModPlayer<YellowGunCharge>().yellowguncharge-((player.GetModPlayer<MGPlayer>().magia)?2:4) ,0,600);
+                if (Main.myPlayer == Projectile.owner && !released) player.GetModPlayer<YellowGunCharge>().yellowguncharge=Math.Clamp( player.GetModPlayer<YellowGunCharge>().yellowguncharge-((player.magic().magia)?2:4) ,0,600);
                 laserstart =(30-Projectile.timeLeft)*laserspeed;
                 laserend = Math.Clamp ((Projectile.ai[0]-60)*laserspeed,0,30*laserspeed);
                 if (laserstart>laserend) laserstart = laserend;

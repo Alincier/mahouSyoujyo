@@ -68,7 +68,6 @@ public class BlueSword : ModItem
             if (Combo.purryCD <=0 || Combo.purry_bonus>0    )
             purry(player);
             //return false;
-            //Main.NewText(Combo.supertime);
             if (Combo.supertime<=0) return false;
         }   
         return true;
@@ -140,7 +139,7 @@ public class BlueSword : ModItem
         }
             //Combo.CD = 30;
         Projectile.NewProjectile(player.GetSource_ItemUse_WithPotentialAmmo(Item, AmmoID.None), player.Center, Main.MouseWorld-player.Center, ModContent.ProjectileType<comboPurry>(), Item.damage, Item.knockBack, player.whoAmI);
-        //player.velocity.X = (player.GetModPlayer<MGPlayer>().magia ? 15f : 10f)*player.direction;
+        //player.velocity.X = (player.magic().magia ? 15f : 10f)*player.direction;
         //Combo.keeping = 40;
 
     }

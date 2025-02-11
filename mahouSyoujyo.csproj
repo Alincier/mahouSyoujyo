@@ -11,19 +11,15 @@
 	  <AdditionalFiles Remove="Content\Items\Consumables\新文件夹\**" />
 	  <AdditionalFiles Remove="Content\NPCs\BOSS\Majo_conscience\**" />
 	  <AdditionalFiles Remove="Content\新文件夹\**" />
-	  <AdditionalFiles Remove="新文件夹\**" />
 	  <Compile Remove="Content\Items\Consumables\新文件夹\**" />
 	  <Compile Remove="Content\NPCs\BOSS\Majo_conscience\**" />
 	  <Compile Remove="Content\新文件夹\**" />
-	  <Compile Remove="新文件夹\**" />
 	  <EmbeddedResource Remove="Content\Items\Consumables\新文件夹\**" />
 	  <EmbeddedResource Remove="Content\NPCs\BOSS\Majo_conscience\**" />
 	  <EmbeddedResource Remove="Content\新文件夹\**" />
-	  <EmbeddedResource Remove="新文件夹\**" />
 	  <None Remove="Content\Items\Consumables\新文件夹\**" />
 	  <None Remove="Content\NPCs\BOSS\Majo_conscience\**" />
 	  <None Remove="Content\新文件夹\**" />
-	  <None Remove="新文件夹\**" />
 	</ItemGroup>
 
 	<!-- References -->

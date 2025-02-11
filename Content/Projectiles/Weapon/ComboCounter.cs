@@ -67,8 +67,6 @@ namespace mahouSyoujyo.Content.Projectiles.Weapon
         }
         public override void AI()
         {
-            // Main.NewText(player.channel);
-            // Main.NewText(Projectile.ai[0]);
             position = player.Center+new Vector2(0, -60f);
             Projectile.Center=position;
             Projectile.frame =Math.Clamp(player.GetModPlayer<Comboing>().purryCount, 0, 5);
@@ -96,9 +94,6 @@ namespace mahouSyoujyo.Content.Projectiles.Weapon
                     new Vector2(width / 2, height / 2),
                     new Vector2(1f, 1f),
                     SpriteEffects.None, 0);
-                // Main.NewText(tex_number);
-                // Main.NewText(SpriteEffects.None);
-                // Main.NewText(Main.screenPosition);
                 //  Dust.NewDustDirect(Player.Center-new Vector2(8f, 48f),
                 //  16, 24, 206, newColor: Color.DarkBlue);
 

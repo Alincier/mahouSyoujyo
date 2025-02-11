@@ -121,7 +121,7 @@ public class YellowGun : ModItem
         else 
         {
             int finalcd = 6;
-            if (player.GetModPlayer<MGPlayer>().magia) finalcd=4; 
+            if (player.magic().magia) finalcd=4; 
             if (cd < finalcd) return false;
             cd = 0;
         } 

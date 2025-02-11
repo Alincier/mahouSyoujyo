@@ -28,7 +28,7 @@ public class TimePlate : ModItem
 {
 
     //public string user_name = "";
-    MGPlayer mgplayer => Main.LocalPlayer.GetModPlayer<MGPlayer>();
+    MGPlayer mgplayer => Main.LocalPlayer.magic();
     public override void SetStaticDefaults()
     {
         Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 3));
@@ -114,7 +114,7 @@ public class TimePlate : ModItem
         }
         //关闭了视觉效果就不时停
         if (hideVisual) return;
-        MGPlayer mgplayer1 = player.GetModPlayer<MGPlayer>();
+        MGPlayer mgplayer1 = player.magic();
         if (!mgplayer1.magia) return;
         mgplayer1.polluted_time += ((mgplayer1.relief) ? 1 : 2)*60;
         if (!mgplayer1.notInDespair()) return;
@@ -153,7 +153,7 @@ public class TimePlate : ModItem
     }
     public override bool? UseItem(Player player)
     {
-        MGPlayer mgplayer = player.GetModPlayer<MGPlayer>();
+        MGPlayer mgplayer = player.magic();
         if (!mgplayer.magia)
         {
             if (ModContent.GetInstance<ClientConfigs>().ShowTimeStopTips) CombatText.NewText(new Rectangle((int)player.position.X, (int)player.position.Y-32, player.width, player.height), new Color(192, 45, 192, 255),
@@ -219,7 +219,6 @@ public class TimePlate : ModItem
         // Here we give the item name a rainbow effect.
         foreach (TooltipLine line in tooltips)
         {
-            //Main.NewText(line.Name);
             if (line.Mod == "Terraria" && line.Name == "ItemName")
             {
                 line.OverrideColor = Main.DiscoColor;

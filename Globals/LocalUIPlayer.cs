@@ -13,6 +13,7 @@ namespace mahouSyoujyo.Globals
     internal class LocalUIPlayer : ModPlayer
     {
         public bool YellowGunChargeBar = false;
+        public bool RedSpearChargeBar = false;
         private Texture2D chargebar = ModContent.Request<Texture2D>("mahouSyoujyo/Content/Assets/YellowGunBar").Value;
         private Texture2D chargestrip = ModContent.Request<Texture2D>("mahouSyoujyo/Content/Assets/YellowGunStrip").Value;
         private Texture2D yellowgun = ModContent.Request<Texture2D>("mahouSyoujyo/Content/Assets/YellowGun").Value;
@@ -24,10 +25,12 @@ namespace mahouSyoujyo.Globals
         public override void ResetEffects()
         {
             YellowGunChargeBar = false;
+            RedSpearChargeBar = false;
             base.ResetEffects();
         }
         public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
         {
+            //终曲能量条绘制
             if (Main.LocalPlayer == Player)
             {
                 SpriteBatch sb = Main.spriteBatch;

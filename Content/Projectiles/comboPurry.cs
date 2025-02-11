@@ -131,8 +131,6 @@ namespace mahouSyoujyo.Content.Projectiles
             }
             Projectile.width = 240*scale; // The width of projectile hitbox
             Projectile.height = 80*scale; // The height of projectile hitbox
-            // Main.NewText(player.channel);
-            // Main.NewText(Projectile.ai[0]);
             if (Projectile.ai[0] == 0)
             {
                 if (player.direction>=0) { direction =0; }// Projectile.rotation = Projectile.velocity.ToRotation(); }
@@ -175,7 +173,6 @@ namespace mahouSyoujyo.Content.Projectiles
                 //
             }
 
-            //Main.NewText(length);
             Projectile.ai[0]++;
             for (int i = frame_tail -1; i>0; i--)
             {
@@ -224,7 +221,7 @@ namespace mahouSyoujyo.Content.Projectiles
                 Dust.NewDustDirect(Projectile.Center + (root+2*Projectile.velocity)*scale,
                 32*scale, 32*scale, 206, newColor: Color.DarkBlue);
             }*/
-                mahouSyoujyo.draw_Center(
+            mahouSyoujyo.draw_Center(
                 tex: tex,
                 frame_num: 1, frame: 0,
                 pos: Projectile.Center + (root+Projectile.velocity)*scale /*+ new Vector2(0 , 16f*scale)*/, 
@@ -265,7 +262,6 @@ namespace mahouSyoujyo.Content.Projectiles
                                 projectile.Kill();
                                 //projectile.frameCounter = player.GetModPlayer<Comboing>().purryCount;
                                 projectile.netUpdate = true;
-                                //Main.NewText(projectile.frameCounter);
                                 //no_counter = false;
                             }
                         if (no_counter)
@@ -284,10 +280,9 @@ namespace mahouSyoujyo.Content.Projectiles
                     }
                     player.GetModPlayer<Comboing>().purryCount++;
                 }
-                player.velocity.X = (player.GetModPlayer<MGPlayer>().magia ? 15f : 10f)*player.direction;
+                player.velocity.X = (player.magic().magia ? 15f : 10f)*player.direction;
                 if (Main.netMode == NetmodeID.MultiplayerClient)
                     NetMessage.SendData(MessageID.SyncPlayer,-1,-1,null,player.whoAmI);
-                //Main.NewText(player.GetModPlayer<Comboing>().purryCount);
                 returnCD=true;
             }
             player.SetImmuneTimeForAllTypes(20);
@@ -302,7 +297,6 @@ namespace mahouSyoujyo.Content.Projectiles
         public override void Kill(int timeLeft)
         {
             
-            //Main.NewText(damage_bonus);
 
         }
     }

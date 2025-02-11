@@ -46,7 +46,6 @@ namespace mahouSyoujyo.Content.Items
             // Here we give the item name a rainbow effect.
             foreach (TooltipLine line2 in tooltips)
             {
-                //Main.NewText(line2.Name);
                 if (line2.Mod == "Terraria" && line2.Name == "ItemName")
                 {
                     line2.OverrideColor = Main.DiscoColor;

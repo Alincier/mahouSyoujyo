@@ -110,9 +110,9 @@ namespace mahouSyoujyo.Content.Projectiles
             {
                 if (npc.realLife==who) count++;
             }
-            if (count>=16) modifiers.SourceDamage*=0.1f;
-            else if (count>=8) modifiers.SourceDamage*=0.2f;
-            else if (count>=4) modifiers.SourceDamage*=0.3f;
+            if (count>=16) modifiers.SourceDamage*=0.25f;
+            else if (count>=8) modifiers.SourceDamage*=0.3f;
+            else if (count>=4) modifiers.SourceDamage*=0.4f;
             else if (count>=2) modifiers.SourceDamage*=0.5f;
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

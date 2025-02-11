@@ -38,7 +38,7 @@ namespace mahouSyoujyo
         }
     }
     // Please read https://github.com/tModLoader/tModLoader/wiki/Basic-tModLoader-Modding-Guide#mod-skeleton-contents for more information about the various files in a mod.
-    public partial class mahouSyoujyo : Mod
+    public partial class mahouSyoujyo: Mod
     {
         public static Effect screeenEffect;
         public static bool stoptime = false;
@@ -95,9 +95,9 @@ namespace mahouSyoujyo
             On_NPC.UpdateNPC +=On_NPC_UpdateNPC;
             On_Rain.Update +=On_Rain_Update;
             On_Dust.UpdateDust +=On_Dust_UpdateDust;
+            On_NPC.SpawnNPC  +=On_NPC_SpawnNPC;
             base.Load();
         }
-
 
         public static void SceneShader(string tech, float degree, float factor = 0, float r0 = 0, float r1 = 0,float r2 = 0,
             float targetX = -1, float targetY = -1)
@@ -108,7 +108,6 @@ namespace mahouSyoujyo
                 if (tech == "GrayScaleMajoConciousness")
                 {
                     float progress = degree;
-                    //Main.NewText(progress);
                     if (!Filters.Scene[tech].IsActive())
                         Filters.Scene.Activate(tech).GetShader().UseProgress(progress);
                     else
@@ -168,6 +167,11 @@ namespace mahouSyoujyo
                 Filters.Scene[tech].Deactivate();
             }
         }
+        private void On_NPC_SpawnNPC(On_NPC.orig_SpawnNPC orig)
+        {
+            //if (TimeStopSystem.TimeStopping) return;
+            orig();
+        }
         private void On_Dust_UpdateDust(On_Dust.orig_UpdateDust orig)
         {
             if (TimeStopSystem.TimeStopping) return;
@@ -189,6 +193,7 @@ namespace mahouSyoujyo
                     if (self.immune[i]>0) self.immune[i]--;
                     else self.immune[i] = 0;
                 }
+                self.CheckActive();
                 return;
             }
             if (self.active) orig(self,i);
@@ -200,7 +205,6 @@ namespace mahouSyoujyo
             orig(); 
             //throw new NotImplementedException();
         }
-
         private void On_Player_Update(On_Player.orig_Update orig, Player self, int i)
         {
             bool isBind = self.GetModPlayer<TimeStop>().bind;

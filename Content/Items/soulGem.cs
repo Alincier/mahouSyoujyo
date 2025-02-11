@@ -11,6 +11,8 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
+using mahouSyoujyo.Common;
+using mahouSyoujyo.Globals;
 
 
 namespace mahouSyoujyo.Content.Items
@@ -19,7 +21,7 @@ namespace mahouSyoujyo.Content.Items
     {
 
         public string user_name = "";
-        MGPlayer mgplayer => Main.LocalPlayer.GetModPlayer<MGPlayer>();
+        MGPlayer mgplayer => Main.LocalPlayer.magic();
         public override void SetStaticDefaults()
         {
             Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 3));
@@ -63,7 +65,7 @@ namespace mahouSyoujyo.Content.Items
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             if (user_name == "" || user_name != player.name) return;
-            MGPlayer mgplayer = player.GetModPlayer<MGPlayer>();
+            MGPlayer mgplayer = player.magic();
             if (user_name == player.name)
             {
                 mgplayer.left_gem_time = 0;
@@ -82,13 +84,13 @@ namespace mahouSyoujyo.Content.Items
                     player.GetArmorPenetration(DamageClass.Generic) += mgplayer.armor_penetration;
                     player.maxMinions += mgplayer.summon_bonus;
                 }
-                //Main.NewText(user_name+" "+player.name);
             }
             //player.GetAttackSpeed(DamageClass.Melee) += 0.1f; // 玩家近战攻速增加10%
             //if (hideVisual) player.GetCritChance(DamageClass.Magic) += 20f; // 玩家魔法暴击率增加20%,当关掉饰品可见性时
         }
         public override void OnSpawn(IEntitySource source)
         {
+
             if (Main.LocalPlayer.HasBuff(ModContent.BuffType<MagicGirlPover>())) 
                 user_name = Main.LocalPlayer.name;
         }
@@ -101,7 +103,6 @@ namespace mahouSyoujyo.Content.Items
             if (user_name!="" && user_name != player.name) return false;
             player.AddBuff(ModContent.BuffType<MagicGirlPover>(), 10);
             user_name=player.name;
-            //Main.NewText(user_name);
             //Item.NetStateChanged();
             return true;
         }
@@ -138,7 +139,7 @@ namespace mahouSyoujyo.Content.Items
             if (mgplayer.lastReforge != null)
                 user_name=mgplayer.lastReforge;
             if (Main.netMode == NetmodeID.Server)
-                NetMessage.SendData(MessageID.SyncItem, Item.whoAmI);
+                NetMessage.SendData(MessageID.SyncItem, -1, Item.whoAmI);
             base.PostReforge();
         }
         public override bool CanRightClick()
@@ -151,13 +152,16 @@ namespace mahouSyoujyo.Content.Items
             tag.Add(this.ToString(),user_name);
             base.SaveData(tag);
         }
+        public override void OnCraft(Recipe recipe)
+        {
+
+        }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             
             // Here we give the item name a rainbow effect.
             foreach (TooltipLine line in tooltips)
             {
-                //Main.NewText(line.Name);
                 if (line.Mod == "Terraria" && line.Name == "ItemName")
                 {
                     line.OverrideColor = Main.DiscoColor;
@@ -182,7 +186,6 @@ namespace mahouSyoujyo.Content.Items
                         ) { OverrideColor = Main.creativeModeColor });
             }
             tooltips.Add(new TooltipLine(Mod, "PowerTips", String.Format(this.GetLocalizedValue("PowerTips"), mgplayer.power)) { OverrideColor = Main.DiscoColor });
-            //Main.NewText(mgplayer.power);
             if (mgplayer.power<=0)
                 tooltips.Add(new TooltipLine(Mod, "No_Power", this.GetLocalizedValue("No_Power")) { OverrideColor = Main.creativeModeColor });
            
@@ -219,6 +222,7 @@ namespace mahouSyoujyo.Content.Items
                 //.AddTile(TileID.WorkBenches)
                 .AddCondition(new Condition("hasPower", () => Main.LocalPlayer.HasBuff<MagicGirlPover>()))
                 .AddCustomShimmerResult(ModContent.ItemType<DespairSoul>(), 1)
+                .AddOnCraftCallback(RecipeCallbacks.SoulGemCallBack)
                 .Register();
         }
     }
