@@ -1,4 +1,4 @@
 displayName = [c/FF44AA:magicGirl][c/000033:魔][c/FFFF00:法][c/AA0000:少][c/00DDDD:女]
 author = CierNya
-version = 0.2.4.0
+version = 0.2.4.1
 includeSource = true

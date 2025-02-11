@@ -1,6 +1,7 @@
 ﻿[h2]一个开发中的魔法少女小圆模组[/h2]
 [h3]近期更新:[/h3]
 精简了包体
+修复了将怪物误判为多体节BOSS的问题，并下调了各武器对多体节怪物的减伤系数。从结果上看，武器伤害提升了，蠕虫类boss死得更快了（
 重写了武器原初之救济的代码，增强了低蓝量下的表现，削弱了高蓝量下的表现。现在释放圆环之理魔法阵只需要300蓝，并在物品上有更加明显的提示。
 新增了佐仓杏子的武器：分离之枪
 优化：现在合成的灵魂宝石上会有玩家的署名，不需要再使用一次来绑定宝石了。
@@ -19,14 +20,14 @@
     [*]魔法剑：泪滴，狂野的近战输出方式魔法武器。猪鲨后。（已被重做）
     [*]一把发射导弹的军火武器（魔法伤害）：决绝之焰。世纪之花和机械三王后击败魔女获得。
     [*]使用魔法枪支射击的武器：终曲。使用充能爆破枪（火星事件）合成。
-    [*]可以穿刺敌人并召唤锁链的长枪：分离之枪。使用太阳石合成。
+    [*][u] 可以穿刺敌人并召唤锁链的长枪：分离之枪。使用太阳石合成。[/u] 
     [*]时停武器，在多人模式也可以时停！（如有bug欢迎反馈）掉落自魔女BOSS.
     [*]灵魂宝石，通过挑战BOSS成长。(魔法少女可以随时随地制作灵魂宝石而不消耗材料）
     [*]悲叹之种系列道具，可以净化灵魂宝石，甚至停止宝石的污染
     [*]NPC：小丘比，在拥有至少100魔力时到达。出售悲叹之种系列物品，困难模式出售魔法少女的所有武器（虽然我建议最好通过BOSS流程获取）。可找她解除魔法少女契约（问就是神迹！）
     [*]小动物：丘比，可对话、签约、被攻击、被捕捉、被迫害（？）
         丘比有自己的旗帜，还能用雕像生成（暗示
-    [*][u] 八个音乐盒，包含八首魔法少女小圆的曲目。小丘比出售。（新增）[/u]
+    [*]八个音乐盒，包含八首魔法少女小圆的曲目。小丘比出售。
     [*]其他一些更新
     [*]魔女生成、能力、结界、贴图和世界的一些具体设定可以在配置中调整了
 
@@ -49,14 +50,14 @@
     [*]Magic Sword: Tears, a wild melee style magic weapon.Drop from DukeFishron.(has been remade recently)
     [*]A weapon shooting missiles(magic damage):Fire Decisive.Drop from the majo boss after defeating Plantera and all mech bosses.
     [*]Weapon shooting with magic guns:Finale.Use Charged Blaster Cannon(Martian Madness event) to craft.
-    [*]A spear that punctures enemies and summon chains:Spear Leaver.Use Sun Stone to craft.
+    [*][u] A spear that punctures enemies and summon chains:Spear Leaver.Use Sun Stone to craft.[/u] 
     [*]Time stop weapon, also works in multiplayer(welcome review if there is bug)Drop from the majo boss.
     [*]Soul Gem, can grow by challenging bosses.(For magic girls it can be crafted anywhere anytime with no materials needed.)
     [*]Grief Seed series items, used for purifying soul gems, and even stop natural pollution increase.
     [*]NPC: Little QB, a loner in QBs,who has emotion like human,arrive when at least a player has 100 mana. It sells Grief Seed series items, and magic girl weapons in hardmode(I recommend getting them through bosses though).Can get rescission of magic girl contract here(Oh dear little QB !)
     [*]Critter: QB, a creature can be attacked, catched or cooked(?).You can also chat with them,or sign a contract with them(But they won't give you any after Sales Service!)
         Wild QBs have their own banner,as well as statue for spawning.
-    [*][u] 8 music boxs of musics in Puella Magi Madoka Magica.Sold by Little QB.(new) [/u]
+    [*]8 music boxs of musics in Puella Magi Madoka Magica.Sold by Little QB.(new) 
     [*]Other updates. 
     [*]Spawning, abilities and assets of Majo can be set in configs,as well as other details of the world.
 

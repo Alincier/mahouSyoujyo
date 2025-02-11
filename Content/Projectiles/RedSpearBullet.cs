@@ -489,12 +489,12 @@ namespace mahouSyoujyo.Content.Projectiles
             int count = 0;
             foreach (NPC npc in Main.ActiveNPCs)
             {
-                if (npc.realLife==who) count++;
+                if (who != -1 && npc.realLife==who) count++;
             }
-            if (count>=16) modifiers.SourceDamage*=0.6f;
-            else if (count>=8) modifiers.SourceDamage*=0.7f;
-            else if (count>=4) modifiers.SourceDamage*=0.8f;
-            else if (count>=2) modifiers.SourceDamage*=0.9f;
+            if (count>=16) modifiers.FinalDamage*=0.6f;
+            else if (count>=8) modifiers.FinalDamage*=0.7f;
+            else if (count>=4) modifiers.FinalDamage*=0.8f;
+            else if (count>=2) modifiers.FinalDamage*=0.9f;
             base.ModifyHitNPC(target, ref modifiers);
         }
         public override void OnKill(int timeLeft)

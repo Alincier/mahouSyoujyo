@@ -300,12 +300,12 @@ namespace mahouSyoujyo.Content.Projectiles.Weapon
             int count = 0;
             foreach (NPC npc in Main.ActiveNPCs)
             {
-                if (npc.realLife==who) count++;
+                if (who != -1 && npc.realLife==who) count++;
             }
-            if (count>=16) modifiers.SourceDamage*=0.5f;
-            else if (count>=8) modifiers.SourceDamage*=0.6f;
-            else if (count>=4) modifiers.SourceDamage*=0.7f;
-            else if (count>=2) modifiers.SourceDamage*=0.8f;
+            if (count>=16) modifiers.FinalDamage*=0.5f;
+            else if (count>=8) modifiers.FinalDamage*=0.6f;
+            else if (count>=4) modifiers.FinalDamage*=0.7f;
+            else if (count>=2) modifiers.FinalDamage*=0.8f;
             base.ModifyHitNPC(target, ref modifiers);
         }
         public override void OnKill(int timeLeft)
