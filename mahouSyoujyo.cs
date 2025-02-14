@@ -13,6 +13,12 @@ using ReLogic.Content;
 using mahouSyoujyo.Common.Systems;
 using mahouSyoujyo.Content.Projectiles;
 using mahouSyoujyo.Content.Buffs;
+using Terraria.Chat;
+using Terraria.Localization;
+using mahouSyoujyo.Content.NPCs.Critters;
+using XPT.Core.Audio.MP3Sharp.Decoding;
+using System.IO;
+using Humanizer;
 namespace mahouSyoujyo
 {
     public struct Vertex : IVertexType
@@ -41,7 +47,6 @@ namespace mahouSyoujyo
     public partial class mahouSyoujyo: Mod
     {
         public static Effect screeenEffect;
-        public static bool stoptime = false;
         public override void Load()
         {
             if (Main.netMode != NetmodeID.Server)
@@ -55,6 +60,7 @@ namespace mahouSyoujyo
                 // Asset<Effect> specialShader = this.Assets.Request<Effect>("Effects/MySpecials");
                 Asset<Effect> filterShader1 = this.Assets.Request<Effect>("Effects/GrayScale");
                 Asset<Effect> filterShader2 = this.Assets.Request<Effect>("Effects/ShockWave");
+                Asset<Effect> filterShader3 = this.Assets.Request<Effect>("Effects/ColorScale");
                 // To add a dye, simply add this for every dye you want to add.
                 // "PassName" should correspond to the name of your pass within the *technique*,
                 // so if you get an error here, make sure you've spelled it right across your effect file.
@@ -82,8 +88,10 @@ namespace mahouSyoujyo
                 Filters.Scene["GrayScaleMajoConciousness"] = new Filter(new ScreenShaderData(filterShader1, "DynamicGrayScale"), EffectPriority.VeryHigh);
                 Filters.Scene["GrayScaleTimeStop"] = new Filter(new ScreenShaderData(filterShader1, "CustomedGrayScale"), EffectPriority.VeryHigh);
                 Filters.Scene["ShockWaveTechnique"] = new Filter(new ScreenShaderData(filterShader2, "NormalShockWave"), EffectPriority.VeryHigh);
+                Filters.Scene["ColorScaleNormal"] = new Filter(new ScreenShaderData(filterShader3, "NormalColorScale"), EffectPriority.VeryHigh);
+                Filters.Scene["ColorScaleDynamic"] = new Filter(new ScreenShaderData(filterShader3, "DynamicColorScale"), EffectPriority.VeryHigh);
 
-                
+
 
             }
 
@@ -94,12 +102,23 @@ namespace mahouSyoujyo
             On_Main.UpdateTime +=On_Main_UpdateTime;
             On_NPC.UpdateNPC +=On_NPC_UpdateNPC;
             On_Rain.Update +=On_Rain_Update;
-            On_Dust.UpdateDust +=On_Dust_UpdateDust;
+            On_Dust.UpdateDust +=On_Dust_UpdateDust;   
             On_NPC.SpawnNPC  +=On_NPC_SpawnNPC;
+            On_NPC.FindFrame +=On_NPC_FindFrame;
+            On_NPC.AI +=On_NPC_AI;
+            On_NPC.UpdateAltTexture +=On_NPC_UpdateAltTexture;
+            On_NPC.UpdateNPC_CritterSounds += On_NPC_UpdateNPC_CritterSounds;
+            On_NPC.UpdateNPC_UpdateGravity += On_NPC_UpdateNPC_UpdateGravity;
+            On_NPC.UpdateNPC_BloodMoonTransformations += On_NPC_UpdateNPC_BloodMoonTransformations;
+            On_NPC.SubAI_HandleTemporaryCatchableNPCPlayerInvulnerability +=On_NPC_SubAI_HandleTemporaryCatchableNPCPlayerInvulnerability;
+            On_NPC.CheckLifeRegen +=On_NPC_CheckLifeRegen;
+            On_NPC.UpdateNPC_UpdateTrails +=On_NPC_UpdateNPC_UpdateTrails;
+            On_NPC.Transform += On_NPC_Transform;
             base.Load();
         }
 
-        public static void SceneShader(string tech, float degree, float factor = 0, float r0 = 0, float r1 = 0,float r2 = 0,
+
+        public static void SceneShader(string tech, float degree, float factor = 0, float r0 = 0, float r1 = 0, float r2 = 0,
             float targetX = -1, float targetY = -1)
         {
 
@@ -138,7 +157,7 @@ namespace mahouSyoujyo
 
                 if (tech == "ShockWaveTechnique")
                 {
-                    
+
                     float progress = degree;//阶段
                     float opacity = factor;//扭曲度
                     //波纹的数量 （uColor.x）、每个波纹有多窄（uColor.y） 和冲击波传播速度 （uColor.z）
@@ -157,9 +176,26 @@ namespace mahouSyoujyo
 
 
                 }
-                
+                if (tech == "ColorScaleDynamic")
+                {
+                    if (factor == 0) factor = 4; //光照强度
+                    float progress = degree;//程度，0为原色彩，1为渲染色彩
+                    Vector3 ucolor = new Vector3(r0, r1, r2);
+                    Vector2 position = new Vector2(targetX, targetY);
+                    if (!Filters.Scene[tech].IsActive())
+                        Filters.Scene.Activate(tech).GetShader().UseProgress(progress).UseIntensity(factor).UseColor(ucolor);
+                    else
+                    {
+                        Filters.Scene[tech].GetShader().UseProgress(progress).UseIntensity(factor).UseColor(ucolor);
+                    }
+
+
+
+                }
+
             }
         }
+
         public static void DelSceneShader(string tech)
         {
             if (Main.netMode != NetmodeID.Server && Filters.Scene[tech].IsActive())
@@ -167,124 +203,7 @@ namespace mahouSyoujyo
                 Filters.Scene[tech].Deactivate();
             }
         }
-        private void On_NPC_SpawnNPC(On_NPC.orig_SpawnNPC orig)
-        {
-            //if (TimeStopSystem.TimeStopping) return;
-            orig();
-        }
-        private void On_Dust_UpdateDust(On_Dust.orig_UpdateDust orig)
-        {
-            if (TimeStopSystem.TimeStopping) return;
-            orig();
 
-        }
-        private void On_Rain_Update(On_Rain.orig_Update orig, Rain self)
-        {
-            if (TimeStopSystem.TimeStopping) return;
-            if (self.active) orig(self);
-        }
-        private void On_NPC_UpdateNPC(On_NPC.orig_UpdateNPC orig, NPC self, int i)
-        {
-            if (TimeStopSystem.TimeStopping) 
-            {
-                if (self.active) 
-                for (i=0; i<256; i++)
-                {
-                    if (self.immune[i]>0) self.immune[i]--;
-                    else self.immune[i] = 0;
-                }
-                self.CheckActive();
-                return;
-            }
-            if (self.active) orig(self,i);
-        }
-
-        private void On_Main_UpdateTime(On_Main.orig_UpdateTime orig)
-        {
-            if (TimeStopSystem.TimeStopping) return;
-            orig(); 
-            //throw new NotImplementedException();
-        }
-        private void On_Player_Update(On_Player.orig_Update orig, Player self, int i)
-        {
-            bool isBind = self.GetModPlayer<TimeStop>().bind;
-            if (TimeStopSystem.TimeStopping && !isBind)
-                return;
-            if (self.active) orig(self, i);
-            //throw new NotImplementedException();
-        }
-
-        //public override 
-        private void On_Projectile_Update(On_Projectile.orig_Update orig, Projectile self, int i)
-        {
-            //时间导弹特供
-            if (self.type == ModContent.ProjectileType<TimeMissile>() && self.active)
-            {
-                TimeMissile missile = (TimeMissile)self.ModProjectile;
-                missile.runtime++;
-                int magic = 0;
-                if (Main.player[missile.Projectile.owner].HasBuff(ModContent.BuffType<MagicGirlPover>())) magic = 1;
-                if (missile.runtime < 30) missile.stage = 0;
-                else if (missile.runtime < 40) missile.stage = 1;
-                else if (missile.runtime < 50) missile.stage = 2;
-                else if (missile.runtime < 60) missile.stage = 3;
-                else if (missile.runtime < 90) missile.stage = 4;
-                else missile.stage = 4+magic; 
-            }
-            bool specialtype = false;
-            if (self.aiStyle == ProjAIStyleID.Flail || self.aiStyle == ProjAIStyleID.Yoyo ||
-                self.aiStyle == ProjAIStyleID.Whip || self.aiStyle == ProjAIStyleID.WireKite ||
-                self.aiStyle == ProjAIStyleID.Pet || self.aiStyle == ProjAIStyleID.FloatBehindPet ||
-                self.aiStyle == ProjAIStyleID.FloatInFrontPet || self.aiStyle == ProjAIStyleID.FloatingFollow ||
-                self.aiStyle == ProjAIStyleID.WormPet ||
-                self.aiStyle == ProjAIStyleID.MagicMissile || self.aiStyle == ProjAIStyleID.Boomerang ||
-                self.aiStyle == ProjAIStyleID.Bubble || self.aiStyle == ProjAIStyleID.WaterJet ||
-                self.aiStyle == ProjAIStyleID.Beam || self.aiStyle == ProjAIStyleID.ThickLaser ||
-                self.aiStyle == ProjAIStyleID.ScutlixLaser || self.aiStyle == ProjAIStyleID.Drill ||
-                self.aiStyle == ProjAIStyleID.FallingStar ||self.aiStyle == ProjAIStyleID.Spear ||
-                self.aiStyle == ProjAIStyleID.ShortSword || self.aiStyle == ProjAIStyleID.SmallFlying ||
-                self.aiStyle == ProjAIStyleID.FlowerPetal || self.aiStyle == ProjAIStyleID.TitaniumShard ||
-                self.aiStyle == ProjAIStyleID.CrystalLeaf || self.aiStyle == ProjAIStyleID.CrystalLeafShot ||
-                self.aiStyle == ProjAIStyleID.Harpoon || self.aiStyle == ProjAIStyleID.HeldProjectile ||
-                self.aiStyle == ProjAIStyleID.NightsEdge || self.aiStyle == ProjAIStyleID.TrueNightsEdge ||
-                self.aiStyle == ProjAIStyleID.PrincessWeapon
-
-                )
-                specialtype = true;
-            bool held = false;
-            for (int j=0;j<256;j++)
-                if (Main.player[j].heldProj==self.whoAmI)
-                    { held = true;  break; }
-
-            if (TimeStopSystem.TimeStopping && ((Array.IndexOf(TimeStop.immuneProjectile, self.type)<0 && !held && !specialtype && !self.hide) || self.hostile) )
-            {
-                GlobalStopProjectile sp;
-                if (self.active)
-                {
-                    if (!Main.projPet[self.type] && !self.minion && !self.sentry && !Main.projHook[self.type])
-                    {
-                        sp = self.GetGlobalProjectile<GlobalStopProjectile>();
-                        if (sp.runningFrameTime >= 5)
-                            return;
-                        sp.runningFrameTime++;
-                    }
-                    //if (sp.runningFrameTime > sp.runningFrame /2)
-                    //{
-                    //    sp.runningFrameTime = 0;
-                    //    sp.runningFrame++;
-                    //}
-                    //else return;
-                        
-                }
-            }
-            
-            if (self.active)
-            {
-                bool isBind = Main.LocalPlayer.GetModPlayer<TimeStop>().bind;
-                if (TimeStopSystem.TimeStopping && !isBind) return;
-                orig(self, i);
-            }
-        }
 
 
         public static void push(Vector2 pos, Vector2 vel, int length, ref Vector2[] pos_old,ref Vector2[] vel_old)

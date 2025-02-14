@@ -244,7 +244,7 @@ public class RedSpearComboing : ModPlayer
                         index,
                         chainCount),
                     //速度分别代表透明度和旋转
-                    new Vector2(127 , index * MathHelper.PiOver2),
+                    new Vector2(127, index * MathHelper.PiOver2),
                     ModContent.ProjectileType<RedSpearChainProj>(),
                     Player.GetWeaponDamage(Player.HeldItem) / 2,
                     0,

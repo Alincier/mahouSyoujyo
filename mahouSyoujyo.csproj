@@ -21,10 +21,14 @@
 	  <None Remove="Content\NPCs\BOSS\Majo_conscience\**" />
 	  <None Remove="Content\新文件夹\**" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Compile Remove="Content\Items\MeleeWeapon\Comboing.cs" />
+	</ItemGroup>
 
 	<!-- References -->
 	<ItemGroup>
 	  <None Remove="Content\Items\Firstbow.png" />
+	  <None Remove="Effects\ColorScale.fx" />
 	  <None Remove="effects\GaussianBlur.fx" />
 	  <None Remove="effects\ShockWave.fx" />
 	  <None Remove="Localization\en-US_Mods.mahouSyoujyo.Configs.hjson" />

@@ -16,7 +16,6 @@ using mahouSyoujyo.Content.Buffs;
 using System.Collections.Generic;
 using mahouSyoujyo.Content.Items.MeleeWeapon;
 using System.IO;
-using mahouSyoujyo.Globals;
 
 namespace mahouSyoujyo.Content.Projectiles.Weapon
 {

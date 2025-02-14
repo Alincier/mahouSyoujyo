@@ -271,7 +271,7 @@ namespace mahouSyoujyo.Content.NPCs.BOSSes.Majo_Consciousness
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
         }
-        
+
         public override void SetDefaults()
         {
             NPC.width = 240;

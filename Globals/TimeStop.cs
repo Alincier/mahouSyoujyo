@@ -21,6 +21,7 @@ namespace mahouSyoujyo.Globals
     public class TimeStop : ModPlayer
     {
         public int usetip = 0;
+        public int spawnTime = 30; 
         public static readonly int[] immuneProjectile =
         {
             ModContent.ProjectileType<ColorFive_Gun>(),
@@ -138,6 +139,14 @@ namespace mahouSyoujyo.Globals
             
 
             base.PostUpdate();
+        }
+        public override void OnRespawn()
+        {
+            spawnTime = 30;
+        }
+        public override void OnEnterWorld()
+        {
+            spawnTime = 30;
         }
         public override void SyncPlayer(int toWho, int fromWho, bool newPlayer)
         {

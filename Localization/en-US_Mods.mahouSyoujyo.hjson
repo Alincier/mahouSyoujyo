@@ -1,4 +1,6 @@
 Commons: {
+	WitchNightBegin: THE WITCH NIGHT HAS BEGAN!
+	WitchNightEnd: The Witch Night ends...
 	DespairDeath: "{0} has died in despair..."
 	LeftGemDeath: "{0} has become an empty shell..."
 }

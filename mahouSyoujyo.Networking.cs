@@ -1,4 +1,5 @@
 using mahouSyoujyo.Common.Systems;
+using mahouSyoujyo.Content.Items.MeleeWeapon;
 using mahouSyoujyo.Globals;
 using mahouSyoujyo.Globals.Players;
 using System.IO;

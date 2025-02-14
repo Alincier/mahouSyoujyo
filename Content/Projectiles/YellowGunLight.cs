@@ -150,7 +150,7 @@ namespace mahouSyoujyo.Content.Projectiles
         public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
             bool magia = player.magic().magia;
-            float distance = Vector2.Distance(target.Center,Projectile.Center+Projectile.velocity.SafeNormalize(Vector2.Zero)*240f);
+            float distance = Vector2.Distance(target.Center, Projectile.Center+Projectile.velocity.SafeNormalize(Vector2.Zero)*240f);
             float mul = Math.Clamp((laserspeed*15f-distance)/720f, 0f, 1f);
             if (!magia) mul = mul*mul;
             if (Projectile.ai[1] == 1) mul = (magia) ? 2f : 1f;
